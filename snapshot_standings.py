@@ -82,6 +82,36 @@ def parse_standings(html: str):
     Returns a list of {"rank", "name", "points"} dicts.
     """
     soup = BeautifulSoup(html, "html.parser")
+
+    # --- Preferred: the WKPooltjes list layout --------------------------
+    # Rows are <li> elements, each with:
+    #   .ranking-widget-position  -> "1 (7)"  (rank, then a change indicator)
+    #   .ranking-widget-player    -> the player's name
+    #   .ranking-widget-score     -> the points
+    players = soup.select(".ranking-widget-player")
+    if players:
+        rows = []
+        for ply in players:
+            row = ply.parent
+            name = ply.get_text(" ", strip=True)
+            if not name:
+                continue
+            pos_el = row.select_one(".ranking-widget-position") if row else None
+            scr_el = row.select_one(".ranking-widget-score") if row else None
+            rank = None
+            if pos_el:
+                m = re.search(r"\d+", pos_el.get_text(" ", strip=True))
+                if m:
+                    rank = int(m.group())
+            points = _clean_number(scr_el.get_text(" ", strip=True)) if scr_el else None
+            rows.append({"rank": rank, "name": name, "points": points})
+        for i, r in enumerate(rows, start=1):
+            if r["rank"] is None:
+                r["rank"] = i
+        rows.sort(key=lambda r: r["rank"])
+        return rows
+
+    # --- Fallback: generic <table> heuristic ----------------------------
     table = soup.find("table")
 
     rows = []
