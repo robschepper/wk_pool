@@ -1,5 +1,117 @@
 {
   "pool": "127",
-  "updated": null,
-  "snapshots": []
+  "updated": "2026-06-13T11:54:10+02:00",
+  "snapshots": [
+    {
+      "date": "2026-06-13",
+      "captured_at": "2026-06-13T11:54:10+02:00",
+      "standings": [
+        {
+          "rank": 1,
+          "name": "Enrico7",
+          "points": 570
+        },
+        {
+          "rank": 2,
+          "name": "Spekkieee",
+          "points": 495
+        },
+        {
+          "rank": 3,
+          "name": "Matje123",
+          "points": 475
+        },
+        {
+          "rank": 4,
+          "name": "Leeuw-oranje",
+          "points": 445
+        },
+        {
+          "rank": 5,
+          "name": "Pinball-Soccer",
+          "points": 390
+        },
+        {
+          "rank": 6,
+          "name": "Oma_honing",
+          "points": 370
+        },
+        {
+          "rank": 7,
+          "name": "RecentHuisBezitter",
+          "points": 370
+        },
+        {
+          "rank": 8,
+          "name": "DeBruyneKroket (beheerder)",
+          "points": 335
+        },
+        {
+          "rank": 9,
+          "name": "timmeke1",
+          "points": 335
+        },
+        {
+          "rank": 10,
+          "name": "JeroenO95",
+          "points": 335
+        },
+        {
+          "rank": 11,
+          "name": "SanderPostma",
+          "points": 315
+        },
+        {
+          "rank": 12,
+          "name": "FleurKoets",
+          "points": 230
+        },
+        {
+          "rank": 13,
+          "name": "Balconnie",
+          "points": 210
+        },
+        {
+          "rank": 14,
+          "name": "Roosie",
+          "points": 175
+        },
+        {
+          "rank": 15,
+          "name": "Buurman-en-buurman",
+          "points": 155
+        },
+        {
+          "rank": 16,
+          "name": "Opahoning",
+          "points": 135
+        },
+        {
+          "rank": 17,
+          "name": "Wingri",
+          "points": 135
+        },
+        {
+          "rank": 18,
+          "name": "PinotPenalty",
+          "points": 135
+        },
+        {
+          "rank": 19,
+          "name": "Momma",
+          "points": 75
+        },
+        {
+          "rank": 20,
+          "name": "Ellisvs",
+          "points": 40
+        },
+        {
+          "rank": 21,
+          "name": "Nadiaatje",
+          "points": 0
+        }
+      ]
+    }
+  ]
 }
