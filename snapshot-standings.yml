@@ -1,0 +1,48 @@
+name: Snapshot standings
+
+# Captures the pool standings once a day and commits the result to
+# standings-history.json, which the website reads to draw the timeline.
+
+on:
+  schedule:
+    # 05:00 UTC daily (~07:00 Brussels in summer) — grabs the previous
+    # night's completed matches. Adjust the time if you prefer.
+    - cron: "0 5 * * *"
+  workflow_dispatch:        # lets you run it manually from the Actions tab
+
+permissions:
+  contents: write           # needed to push the updated json back
+
+concurrency:
+  group: snapshot-standings
+  cancel-in-progress: false
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install requests beautifulsoup4
+
+      - name: Capture today's standings
+        run: python snapshot_standings.py
+
+      - name: Commit if changed
+        run: |
+          git config user.name  "wk-poule-bot"
+          git config user.email "actions@github.com"
+          if [[ -n "$(git status --porcelain standings-history.json)" ]]; then
+            git add standings-history.json
+            git commit -m "Standings snapshot $(date -u +%Y-%m-%d)"
+            git push
+          else
+            echo "No change in standings-history.json — nothing to commit."
+          fi

@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Familie WK Poule 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,500;1,9..144,900&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F4E8D0;
+    --paper-2:#EBDABA;
+    --ink:#14281C;
+    --green:#1F5A35;
+    --green-deep:#163F26;
+    --orange:#E45726;
+    --orange-soft:#EF7A3E;
+    --gold:#C9962B;
+    --gold-light:#E0B548;
+    --line:#14281C;
+    --shadow:rgba(20,40,28,.18);
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Hanken Grotesk',sans-serif;
+    overflow-x:hidden;
+    position:relative;
+  }
+
+  /* grain overlay */
+  body::after{
+    content:"";
+    position:fixed;inset:0;
+    pointer-events:none;z-index:9999;
+    opacity:.045;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  a{color:inherit;}
+  ::selection{background:var(--orange);color:var(--paper);}
+
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
+
+  /* ---------- TOP TICKER ---------- */
+  .ticker{
+    background:var(--ink);
+    color:var(--paper);
+    overflow:hidden;
+    white-space:nowrap;
+    font-family:'Hanken Grotesk';
+    font-weight:700;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    font-size:.72rem;
+    border-bottom:3px solid var(--gold);
+  }
+  .ticker .track{
+    display:inline-block;
+    padding:11px 0;
+    animation:scroll 28s linear infinite;
+  }
+  .ticker .track span{margin:0 1.4rem;color:var(--gold-light);}
+  .ticker .track span b{color:var(--orange-soft);}
+  @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    padding:64px 0 80px;
+    text-align:center;
+    overflow:hidden;
+    border-bottom:4px solid var(--ink);
+    background:
+      radial-gradient(circle at 50% 18%, rgba(228,87,38,.10), transparent 55%);
+  }
+  /* vintage sunburst */
+  .hero .sunburst{
+    position:absolute;
+    top:-30%;left:50%;
+    width:160vw;height:160vw;
+    max-width:1500px;max-height:1500px;
+    transform:translateX(-50%);
+    background:repeating-conic-gradient(
+      from 0deg at 50% 50%,
+      rgba(31,90,53,.07) 0deg 6deg,
+      transparent 6deg 12deg);
+    z-index:0;
+    animation:spin 120s linear infinite;
+  }
+  @keyframes spin{to{transform:translateX(-50%) rotate(360deg)}}
+
+  .hero .inner{position:relative;z-index:2;}
+
+  .kicker{
+    display:inline-flex;align-items:center;gap:10px;
+    font-weight:800;text-transform:uppercase;
+    letter-spacing:.28em;font-size:.7rem;
+    color:var(--green);
+    background:var(--paper);
+    border:2px solid var(--ink);
+    padding:8px 16px;
+    border-radius:40px;
+    margin-bottom:26px;
+    box-shadow:4px 4px 0 var(--ink);
+  }
+  .kicker .dot{width:7px;height:7px;border-radius:50%;background:var(--orange);box-shadow:0 0 0 3px rgba(228,87,38,.25);}
+
+  .hero h1{
+    font-family:'Fraunces',serif;
+    font-weight:900;
+    line-height:.86;
+    letter-spacing:-.02em;
+    font-size:clamp(3.4rem,12vw,8.4rem);
+    color:var(--ink);
+    text-transform:uppercase;
+  }
+  .hero h1 .fam{display:block;color:var(--green);}
+  .hero h1 .year{
+    display:block;
+    font-style:italic;
+    color:var(--orange);
+    -webkit-text-stroke:0;
+    position:relative;
+  }
+  .hero h1 .poule{display:block;}
+
+  .hero .sub{
+    max-width:560px;margin:28px auto 0;
+    font-size:clamp(1rem,2.4vw,1.25rem);
+    line-height:1.5;
+    color:var(--green-deep);
+    font-weight:500;
+  }
+  .hero .sub em{font-family:'Fraunces';font-style:italic;color:var(--orange);}
+
+  /* floating decorations */
+  .deco{position:absolute;z-index:1;opacity:.9;}
+  .deco svg{display:block;}
+  .ball-1{top:14%;left:7%;width:64px;animation:float 7s ease-in-out infinite;}
+  .ball-2{bottom:16%;right:9%;width:48px;animation:float 9s ease-in-out infinite reverse;}
+  .star-1{top:20%;right:14%;width:46px;animation:twinkle 4s ease-in-out infinite;}
+  .star-2{bottom:24%;left:13%;width:34px;animation:twinkle 5s ease-in-out infinite .8s;}
+  @keyframes float{0%,100%{transform:translateY(0) rotate(-6deg)}50%{transform:translateY(-22px) rotate(8deg)}}
+  @keyframes twinkle{0%,100%{transform:scale(1) rotate(0);opacity:.5}50%{transform:scale(1.18) rotate(20deg);opacity:1}}
+
+  /* reveal animation */
+  .reveal{opacity:0;transform:translateY(24px);animation:rise .9s cubic-bezier(.2,.7,.2,1) forwards;}
+  .d1{animation-delay:.05s}.d2{animation-delay:.18s}.d3{animation-delay:.31s}.d4{animation-delay:.44s}
+  @keyframes rise{to{opacity:1;transform:none}}
+
+  /* ---------- COUNTDOWN ---------- */
+  .countdown{
+    background:var(--ink);
+    color:var(--paper);
+    padding:54px 0;
+    position:relative;
+    border-bottom:4px solid var(--ink);
+  }
+  .countdown::before{
+    content:"";position:absolute;inset:0;opacity:.5;
+    background:repeating-linear-gradient(45deg,transparent 0 13px,rgba(201,150,43,.06) 13px 14px);
+  }
+  .countdown .wrap{position:relative;}
+  .cd-label{
+    text-align:center;
+    font-weight:800;text-transform:uppercase;letter-spacing:.26em;
+    font-size:.75rem;color:var(--gold-light);margin-bottom:6px;
+  }
+  .cd-title{
+    text-align:center;
+    font-family:'Fraunces';font-style:italic;font-weight:900;
+    font-size:clamp(1.8rem,5vw,2.8rem);
+    color:var(--paper);margin-bottom:32px;
+  }
+  .cd-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);
+    gap:14px;max-width:680px;margin:0 auto;
+  }
+  .cd-cell{
+    background:var(--paper);
+    color:var(--ink);
+    border-radius:14px;
+    padding:22px 8px 16px;
+    text-align:center;
+    box-shadow:6px 6px 0 var(--gold);
+    border:2px solid var(--ink);
+    position:relative;
+  }
+  .cd-cell .num{
+    font-family:'Fraunces';font-weight:900;
+    font-size:clamp(2.2rem,7vw,3.6rem);
+    line-height:1;color:var(--green);
+    font-variant-numeric:tabular-nums;
+  }
+  .cd-cell .unit{
+    margin-top:8px;text-transform:uppercase;
+    font-weight:800;letter-spacing:.14em;font-size:.66rem;color:var(--orange);
+  }
+  .cd-done{
+    text-align:center;font-family:'Fraunces';font-style:italic;
+    font-size:1.6rem;color:var(--gold-light);
+  }
+
+  /* ---------- STANDINGS ---------- */
+  .standings{padding:74px 0 90px;}
+  .section-head{text-align:center;margin-bottom:42px;}
+  .section-head .eyebrow{
+    display:inline-block;
+    font-weight:800;text-transform:uppercase;letter-spacing:.26em;
+    font-size:.72rem;color:var(--orange);margin-bottom:14px;
+  }
+  .section-head h2{
+    font-family:'Fraunces';font-weight:900;
+    font-size:clamp(2.4rem,7vw,4.2rem);
+    line-height:.95;color:var(--ink);text-transform:uppercase;
+  }
+  .section-head p{
+    margin:16px auto 0;max-width:520px;
+    color:var(--green-deep);font-weight:500;font-size:1.02rem;line-height:1.5;
+  }
+
+  .board{
+    background:var(--paper);
+    border:3px solid var(--ink);
+    border-radius:20px;
+    box-shadow:12px 12px 0 var(--green);
+    overflow:hidden;
+    position:relative;
+  }
+  .board-top{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:16px;flex-wrap:wrap;
+    background:var(--green);
+    color:var(--paper);
+    padding:18px 26px;
+    border-bottom:3px solid var(--ink);
+  }
+  .board-top .bt-title{
+    display:flex;align-items:center;gap:12px;
+    font-family:'Fraunces';font-weight:900;font-style:italic;
+    font-size:1.35rem;letter-spacing:.01em;
+  }
+  .board-top .bt-title svg{width:26px;height:26px;flex:none;}
+  .board-top .bt-tag{
+    font-weight:800;text-transform:uppercase;letter-spacing:.16em;
+    font-size:.66rem;background:var(--gold);color:var(--ink);
+    padding:6px 12px;border-radius:30px;border:2px solid var(--ink);
+  }
+  .board-body{padding:14px 18px 26px;}
+
+  /* loading / fallback */
+  .widget-loading,.widget-fallback{
+    text-align:center;padding:48px 20px;color:var(--green-deep);font-weight:600;
+  }
+  .widget-loading .spinner{
+    width:34px;height:34px;border-radius:50%;
+    border:4px solid var(--paper-2);border-top-color:var(--orange);
+    margin:0 auto 16px;animation:rot 1s linear infinite;
+  }
+  @keyframes rot{to{transform:rotate(360deg)}}
+  .widget-fallback a{color:var(--orange);font-weight:800;}
+
+  /* generic styling for whatever the wkpooltjes widget injects */
+  .ranking-widget-fetch-area table{
+    width:100%;border-collapse:collapse;font-size:.96rem;
+  }
+  .ranking-widget-fetch-area th{
+    text-align:left;padding:12px 14px;
+    text-transform:uppercase;letter-spacing:.08em;font-size:.7rem;
+    color:var(--green);border-bottom:2px solid var(--ink);font-weight:800;
+  }
+  .ranking-widget-fetch-area td{
+    padding:13px 14px;border-bottom:1px solid rgba(20,40,28,.12);font-weight:600;
+  }
+  .ranking-widget-fetch-area tr:nth-child(even) td{background:rgba(31,90,53,.05);}
+  .ranking-widget-fetch-area tr:first-child td{font-weight:800;}
+  .ranking-widget-fetch-area img{vertical-align:middle;}
+
+  .ranking-widget-footer{
+    padding:14px 26px;border-top:3px solid var(--ink);
+    background:var(--paper-2);
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    background:var(--ink);color:var(--paper);
+    text-align:center;padding:46px 24px;
+    border-top:4px solid var(--gold);
+  }
+  footer .crest{font-size:1.6rem;margin-bottom:10px;}
+  footer h3{font-family:'Fraunces';font-style:italic;font-weight:900;font-size:1.5rem;margin-bottom:8px;}
+  footer p{color:rgba(244,232,208,.7);font-size:.9rem;max-width:440px;margin:0 auto;line-height:1.5;}
+  footer .heart{color:var(--orange-soft);}
+
+  /* ---------- TIMELINE / BUMP CHART ---------- */
+  .timeline{
+    padding:30px 0 90px;
+    background:
+      radial-gradient(circle at 80% 0%, rgba(201,150,43,.10), transparent 45%);
+  }
+  .chart-card{
+    background:var(--paper);
+    border:3px solid var(--ink);
+    border-radius:20px;
+    box-shadow:12px 12px 0 var(--orange);
+    overflow:hidden;
+  }
+  .chart-card .board-top{background:var(--green-deep);box-shadow:none;}
+  .chart-card .board-top .bt-tag{background:var(--orange-soft);}
+  .chart-body{padding:10px 14px 8px;}
+  #bumpchart{width:100%;height:auto;display:block;font-family:'Hanken Grotesk',sans-serif;}
+
+  .bump-line{fill:none;stroke-width:3.4;stroke-linecap:round;stroke-linejoin:round;
+    transition:opacity .2s,stroke-width .2s;}
+  .bump-dot{stroke:var(--paper);stroke-width:2.5;transition:opacity .2s,r .2s;}
+  .bump-name{font-weight:800;font-size:14px;dominant-baseline:middle;}
+  .bump-rankguide{fill:rgba(20,40,28,.28);font-weight:800;font-size:12px;}
+  .bump-grid{stroke:rgba(20,40,28,.10);stroke-width:1;}
+  .bump-datelabel{fill:var(--green-deep);font-weight:700;font-size:11px;text-anchor:middle;}
+  .bump-series.dim .bump-line{opacity:.16;}
+  .bump-series.dim .bump-dot{opacity:.18;}
+  .bump-series.dim .bump-name{opacity:.25;}
+  .bump-series{cursor:pointer;}
+  .bump-series.hot .bump-line{stroke-width:5;}
+  .crown{font-size:15px;}
+
+  .chart-legend{
+    display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:center;
+    padding:6px 18px 22px;
+  }
+  .chart-legend .lg{
+    display:inline-flex;align-items:center;gap:7px;
+    font-weight:700;font-size:.84rem;cursor:pointer;
+    padding:4px 10px;border-radius:30px;border:2px solid transparent;
+    transition:border-color .15s,background .15s;
+  }
+  .chart-legend .lg:hover{border-color:var(--ink);background:rgba(20,40,28,.04);}
+  .chart-legend .lg .sw{width:13px;height:13px;border-radius:50%;border:2px solid var(--ink);}
+
+  .chart-note{
+    text-align:center;color:var(--green-deep);font-weight:600;
+    font-size:.84rem;padding:0 20px 22px;opacity:.8;
+  }
+  .chart-empty{
+    text-align:center;padding:60px 24px;color:var(--green-deep);
+  }
+  .chart-empty .big{font-family:'Fraunces';font-style:italic;font-weight:900;
+    font-size:1.5rem;color:var(--ink);margin-bottom:10px;}
+  .chart-empty .demo-tag{
+    display:inline-block;margin-top:14px;font-size:.72rem;font-weight:800;
+    text-transform:uppercase;letter-spacing:.12em;color:var(--orange);
+    background:rgba(228,87,38,.10);border:2px solid var(--orange);
+    padding:5px 12px;border-radius:30px;}
+
+  @media(max-width:560px){
+    .cd-grid{grid-template-columns:repeat(2,1fr);}
+    .board{box-shadow:7px 7px 0 var(--green);}
+    .chart-card{box-shadow:7px 7px 0 var(--orange);}
+    .hero{padding:46px 0 56px;}
+    .deco{display:none;}
+    .bump-name{font-size:12px;}
+  }
+</style>
+</head>
+<body>
+
+  <!-- TOP TICKER -->
+  <div class="ticker">
+    <div class="track">
+      <span>⚽ FIFA WERELDKAMPIOENSCHAP 2026</span><span><b>·</b></span>
+      <span>USA · CANADA · MEXICO</span><span><b>·</b></span>
+      <span>48 LANDEN · 104 WEDSTRIJDEN</span><span><b>·</b></span>
+      <span>WIE WORDT FAMILIEKAMPIOEN?</span><span><b>·</b></span>
+      <span>⚽ FIFA WERELDKAMPIOENSCHAP 2026</span><span><b>·</b></span>
+      <span>USA · CANADA · MEXICO</span><span><b>·</b></span>
+      <span>48 LANDEN · 104 WEDSTRIJDEN</span><span><b>·</b></span>
+      <span>WIE WORDT FAMILIEKAMPIOEN?</span><span><b>·</b></span>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="sunburst"></div>
+
+    <div class="deco ball-1">
+      <svg viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="46" fill="#F4E8D0" stroke="#14281C" stroke-width="4"/><path d="M50 28l11 8-4 13H43l-4-13z" fill="#14281C"/><path d="M50 28V14M61 36l12-7M57 49l13 4M43 49l-13 4M39 36L27 29" stroke="#14281C" stroke-width="3" stroke-linecap="round"/></svg>
+    </div>
+    <div class="deco ball-2">
+      <svg viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="46" fill="#E45726" stroke="#14281C" stroke-width="4"/><path d="M50 28l11 8-4 13H43l-4-13z" fill="#14281C"/></svg>
+    </div>
+    <div class="deco star-1">
+      <svg viewBox="0 0 24 24" fill="#C9962B" stroke="#14281C" stroke-width="1.5"><path d="M12 1l3 7 7 .5-5.5 4.5 2 7L12 17l-6.5 3 2-7L2 8.5 9 8z"/></svg>
+    </div>
+    <div class="deco star-2">
+      <svg viewBox="0 0 24 24" fill="#1F5A35" stroke="#14281C" stroke-width="1.5"><path d="M12 1l3 7 7 .5-5.5 4.5 2 7L12 17l-6.5 3 2-7L2 8.5 9 8z"/></svg>
+    </div>
+
+    <div class="inner wrap">
+      <span class="kicker reveal d1"><span class="dot"></span> De officiële familiepoule</span>
+      <h1>
+        <span class="fam reveal d1">Familie</span>
+        <span class="poule reveal d2">WK Poule</span>
+        <span class="year reveal d3">2026</span>
+      </h1>
+      <p class="sub reveal d4">Voorspel de wedstrijden, verzamel je punten en strijd om de eeuwige roem.
+      Wie van ons wordt de <em>wereldkampioen-voorspeller</em> van de familie?</p>
+    </div>
+  </header>
+
+  <!-- COUNTDOWN -->
+  <section class="countdown">
+    <div class="wrap">
+      <p class="cd-label">⚽ Aftellen naar de aftrap</p>
+      <h2 class="cd-title">Het toernooi begint over…</h2>
+      <div class="cd-grid" id="cd">
+        <div class="cd-cell"><div class="num" id="d">--</div><div class="unit">Dagen</div></div>
+        <div class="cd-cell"><div class="num" id="h">--</div><div class="unit">Uren</div></div>
+        <div class="cd-cell"><div class="num" id="m">--</div><div class="unit">Minuten</div></div>
+        <div class="cd-cell"><div class="num" id="s">--</div><div class="unit">Seconden</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STANDINGS -->
+  <section class="standings">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">★ Live tussenstand ★</span>
+        <h2>Het Klassement</h2>
+        <p>De actuele ranglijst van onze poule — ververst automatisch. Hoe hoger op de lijst, hoe groter de eer aan de familietafel.</p>
+      </div>
+
+      <div class="board">
+        <div class="board-top">
+          <div class="bt-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#F4E8D0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 1-2-2V5h4M18 9h2a2 2 0 0 0 2-2V5h-4M6 4h12v6a6 6 0 0 1-12 0V4zM12 16v3M8 22h8M9 19h6"/></svg>
+            Stand van zaken
+          </div>
+          <span class="bt-tag">● Live</span>
+        </div>
+        <div class="board-body">
+
+          <!-- ====== WKPooltjes ranking widget ====== -->
+          <!-- Begin ranking widget WKPooltjes -->
+          <div class="ranking-widget">
+            <div class="ranking-widget-fetch-area">
+              <div class="widget-loading">
+                <div class="spinner"></div>
+                Klassement wordt geladen…
+              </div>
+            </div>
+            <script>
+              (function () {
+                var area = document.querySelector('.ranking-widget-fetch-area');
+                fetch('https://www.wkpooltjes.nl/rankingpoolwidget/b536afe31e61385d1494d8033e2f8e01/127/')
+                  .then(function (r) { return r.text(); })
+                  .then(function (h) { area.innerHTML = h; })
+                  .catch(function () {
+                    area.innerHTML = '<div class="widget-fallback">Het klassement kon even niet geladen worden.<br>Ververs de pagina of bekijk het op <a href="https://www.wkpooltjes.nl" target="_blank" rel="noopener">wkpooltjes.nl</a>.</div>';
+                  });
+              })();
+            </script>
+            <div class="ranking-widget-footer" style="display:flex;align-items:center;justify-content:end;font-size:12px;color:#999999;">
+              Ranglijst mogelijk gemaakt door
+              <a href="https://www.wkpooltjes.nl" target="_blank" rel="noopener" style="color:#999999;text-decoration:none;display:flex;align-items:center;">
+                <img src="https://cdn01.wkpooltjes.nl/gfx/core/logo-branding-wkpooltjes.png" height="16px" style="width:auto;height:16px;display:inline;border:none;margin:0 5px;" />
+                dé wk poule engine</a>
+            </div>
+          </div>
+          <!-- End ranking widget WKPooltjes -->
+          <!-- ====== /WKPooltjes ranking widget ====== -->
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE / BUMP CHART -->
+  <section class="timeline">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">★ De reis naar de top ★</span>
+        <h2>Het Verloop</h2>
+        <p>Dag na dag bijgehouden: wie klimt, wie zakt, en wie houdt stand. Volg hieronder hoe de strijd zich ontvouwt door het hele toernooi heen.</p>
+      </div>
+
+      <div class="chart-card">
+        <div class="board-top">
+          <div class="bt-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#F4E8D0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18M7 15l4-5 3 3 5-7"/></svg>
+            Klassement per dag
+          </div>
+          <span class="bt-tag">Bijgewerkt</span>
+        </div>
+        <div class="chart-body">
+          <div id="bump-wrap">
+            <div class="chart-empty">
+              <div class="spinner" style="width:34px;height:34px;border-radius:50%;border:4px solid var(--paper-2);border-top-color:var(--orange);margin:0 auto 16px;animation:rot 1s linear infinite;"></div>
+              Tijdlijn wordt geladen…
+            </div>
+          </div>
+        </div>
+        <div class="chart-legend" id="bump-legend"></div>
+        <div class="chart-note" id="bump-note"></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="crest">⚽ 🏆 ⚽</div>
+    <h3>Familie WK Poule 2026</h3>
+    <p>Gemaakt met <span class="heart">♥</span> voor de familie. Veel succes met voorspellen — en moge de beste familie-orakel winnen!</p>
+  </footer>
+
+<script>
+  // Countdown to the 2026 FIFA World Cup opening match — 11 June 2026
+  var target = new Date('2026-06-11T18:00:00').getTime();
+  var grid = document.getElementById('cd');
+
+  function pad(n){ return n < 10 ? '0' + n : '' + n; }
+
+  function tick(){
+    var now = Date.now();
+    var diff = target - now;
+    if (diff <= 0){
+      grid.innerHTML = '<div class="cd-done" style="grid-column:1/-1">🎉 Het WK is begonnen — succes met je voorspellingen! 🎉</div>';
+      clearInterval(timer);
+      return;
+    }
+    var d = Math.floor(diff / 86400000);
+    var h = Math.floor((diff % 86400000) / 3600000);
+    var m = Math.floor((diff % 3600000) / 60000);
+    var s = Math.floor((diff % 60000) / 1000);
+    document.getElementById('d').textContent = d;
+    document.getElementById('h').textContent = pad(h);
+    document.getElementById('m').textContent = pad(m);
+    document.getElementById('s').textContent = pad(s);
+  }
+  tick();
+  var timer = setInterval(tick, 1000);
+</script>
+
+<script>
+/* =====================================================================
+   BUMP CHART — daily standings timeline
+   Reads ./standings-history.json (produced by the GitHub Action).
+   Falls back to a demo dataset when that file can't be loaded
+   (e.g. opening this file locally), so you can preview the look.
+   ===================================================================== */
+(function () {
+  var PALETTE = ['#E45726','#1F5A35','#C9962B','#2A6F86','#9C3848',
+                 '#6A8532','#B5651D','#5E4B8B','#0E7C7B','#C2185B'];
+
+  // Demo data — only used if standings-history.json can't be fetched.
+  var SAMPLE = { pool:'demo', snapshots:[
+    { date:'2026-06-11', standings:[{rank:1,name:'Oma',points:9},{rank:2,name:'Rob',points:8},{rank:3,name:'Lien',points:6},{rank:4,name:'Opa',points:5},{rank:5,name:'Tom',points:4}] },
+    { date:'2026-06-14', standings:[{rank:1,name:'Rob',points:17},{rank:2,name:'Oma',points:16},{rank:3,name:'Tom',points:14},{rank:4,name:'Lien',points:13},{rank:5,name:'Opa',points:11}] },
+    { date:'2026-06-17', standings:[{rank:1,name:'Rob',points:25},{rank:2,name:'Tom',points:23},{rank:3,name:'Oma',points:22},{rank:4,name:'Opa',points:20},{rank:5,name:'Lien',points:18}] },
+    { date:'2026-06-20', standings:[{rank:1,name:'Tom',points:33},{rank:2,name:'Rob',points:32},{rank:3,name:'Oma',points:30},{rank:4,name:'Lien',points:27},{rank:5,name:'Opa',points:26}] },
+    { date:'2026-06-24', standings:[{rank:1,name:'Oma',points:41},{rank:2,name:'Tom',points:40},{rank:3,name:'Rob',points:39},{rank:4,name:'Opa',points:35},{rank:5,name:'Lien',points:33}] },
+    { date:'2026-06-28', standings:[{rank:1,name:'Rob',points:50},{rank:2,name:'Oma',points:49},{rank:3,name:'Tom',points:47},{rank:4,name:'Opa',points:42},{rank:5,name:'Lien',points:40}] }
+  ]};
+
+  var NL_MONTHS = ['jan','feb','mrt','apr','mei','jun','jul','aug','sep','okt','nov','dec'];
+  function fmtDate(iso){ var p=iso.split('-'); return parseInt(p[2],10)+' '+(NL_MONTHS[parseInt(p[1],10)-1]||''); }
+  function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+  var wrap   = document.getElementById('bump-wrap');
+  var legend = document.getElementById('bump-legend');
+  var note   = document.getElementById('bump-note');
+
+  function showMessage(title, sub, demo){
+    wrap.innerHTML = '<div class="chart-empty"><div class="big">'+title+'</div>'+
+      (sub?('<div>'+sub+'</div>'):'')+
+      (demo?'<div class="demo-tag">Voorbeeldweergave</div>':'')+'</div>';
+    legend.innerHTML=''; note.textContent='';
+  }
+
+  function render(history, isDemo){
+    // sort + de-duplicate snapshots by date (keep the last per date)
+    var byDate = {};
+    (history.snapshots||[]).forEach(function(s){ if(s && s.date) byDate[s.date]=s; });
+    var snaps = Object.keys(byDate).sort().map(function(d){ return byDate[d]; });
+
+    if(snaps.length === 0){
+      showMessage('Nog geen tijdlijn', 'De grafiek vult zich automatisch zodra de eerste daggegevens binnen zijn.', isDemo);
+      return;
+    }
+
+    var dates = snaps.map(function(s){ return s.date; });
+    var players = {};
+    snaps.forEach(function(s){
+      (s.standings||[]).forEach(function(row){
+        if(!players[row.name]) players[row.name] = { ranks:{}, points:{} };
+        players[row.name].ranks[s.date]  = row.rank;
+        players[row.name].points[s.date] = row.points;
+      });
+    });
+    var names = Object.keys(players);
+    if(names.length === 0){ showMessage('Nog geen tijdlijn','', isDemo); return; }
+
+    names.forEach(function(n,i){ players[n].color = PALETTE[i % PALETTE.length]; });
+
+    var maxRank = 1;
+    names.forEach(function(n){ for(var d in players[n].ranks){ if(players[n].ranks[d]>maxRank) maxRank=players[n].ranks[d]; } });
+
+    // layout (SVG user units)
+    var mL=44, mR=150, mT=26, mB=40, rowH=50;
+    var W=920;
+    var plotW = W - mL - mR;
+    var H = mT + maxRank*rowH + mB;
+    var single = dates.length === 1;
+
+    function xAt(i){ return single ? (mL + plotW*0.20) : (mL + (plotW * i/(dates.length-1))); }
+    function yAt(r){ return mT + (r-0.5)*rowH; }
+
+    var svg = '<svg id="bumpchart" viewBox="0 0 '+W+' '+H+'" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Klassement per dag">';
+
+    // rank gridlines + guides
+    for(var r=1; r<=maxRank; r++){
+      var gy=yAt(r);
+      svg += '<line class="bump-grid" x1="'+mL+'" y1="'+gy+'" x2="'+(W-mR+10)+'" y2="'+gy+'"/>';
+      svg += '<text class="bump-rankguide" x="'+(mL-14)+'" y="'+(gy+4)+'" text-anchor="middle">'+r+'</text>';
+    }
+    // date labels
+    dates.forEach(function(d,i){
+      svg += '<text class="bump-datelabel" x="'+xAt(i)+'" y="'+(H-14)+'">'+esc(fmtDate(d))+'</text>';
+    });
+
+    // one group per player
+    names.forEach(function(n){
+      var p = players[n];
+      var pts=[];
+      dates.forEach(function(d,i){ if(p.ranks[d]!=null) pts.push({x:xAt(i), y:yAt(p.ranks[d]), d:d}); });
+      if(pts.length===0) return;
+
+      svg += '<g class="bump-series" data-name="'+esc(n)+'">';
+      if(pts.length>1){
+        var dd='M '+pts[0].x+' '+pts[0].y;
+        for(var k=1;k<pts.length;k++) dd+=' L '+pts[k].x+' '+pts[k].y;
+        svg += '<path class="bump-line" d="'+dd+'" stroke="'+p.color+'"/>';
+      }
+      pts.forEach(function(pt){
+        var rk=p.ranks[pt.d], po=p.points[pt.d];
+        svg += '<circle class="bump-dot" cx="'+pt.x+'" cy="'+pt.y+'" r="5.6" fill="'+p.color+'">'+
+               '<title>'+esc(n)+' — '+esc(fmtDate(pt.d))+': plaats '+rk+(po!=null?(' ('+po+' ptn)'):'')+'</title></circle>';
+      });
+      // end label
+      var last=pts[pts.length-1];
+      var lastRank = p.ranks[last.d];
+      var crown = (lastRank===1) ? '<tspan class="crown">\u{1F451} </tspan>' : '';
+      svg += '<text class="bump-name" x="'+(last.x+14)+'" y="'+last.y+'" fill="'+p.color+'">'+crown+esc(n)+'</text>';
+      svg += '</g>';
+    });
+
+    svg += '</svg>';
+    wrap.innerHTML = svg;
+
+    // legend
+    legend.innerHTML = names.map(function(n){
+      return '<span class="lg" data-name="'+esc(n)+'"><span class="sw" style="background:'+players[n].color+'"></span>'+esc(n)+'</span>';
+    }).join('');
+
+    // note
+    var leader = (snaps[snaps.length-1].standings||[])[0];
+    var lead = leader ? (' Huidige koploper: ' + esc(leader.name) + '.') : '';
+    note.textContent = (single
+        ? 'Eerste momentopname vastgelegd — de lijnen verschijnen vanaf de tweede dag.'
+        : (dates.length + ' dagen vastgelegd.')) + lead +
+        (isDemo ? '  (Dit zijn voorbeeldgegevens.)' : '');
+
+    // hover highlight (chart + legend share it)
+    var groups = [].slice.call(wrap.querySelectorAll('.bump-series'));
+    var chips  = [].slice.call(legend.querySelectorAll('.lg'));
+    function highlight(name){
+      groups.forEach(function(g){
+        var on = g.getAttribute('data-name')===name;
+        g.classList.toggle('hot', on);
+        g.classList.toggle('dim', !on);
+      });
+    }
+    function clearHi(){ groups.forEach(function(g){ g.classList.remove('hot','dim'); }); }
+    groups.forEach(function(g){
+      g.addEventListener('mouseenter', function(){ highlight(g.getAttribute('data-name')); });
+      g.addEventListener('mouseleave', clearHi);
+    });
+    chips.forEach(function(c){
+      c.addEventListener('mouseenter', function(){ highlight(c.getAttribute('data-name')); });
+      c.addEventListener('mouseleave', clearHi);
+    });
+  }
+
+  fetch('./standings-history.json', { cache:'no-store' })
+    .then(function(r){ if(!r.ok) throw new Error('no file'); return r.json(); })
+    .then(function(data){ render(data, false); })
+    .catch(function(){ render(SAMPLE, true); });
+})();
+</script>
+</body>
+</html>
