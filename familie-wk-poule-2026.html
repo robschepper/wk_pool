@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="nl">
 <head>
 <meta charset="UTF-8" />
@@ -22,354 +23,472 @@
     --shadow:rgba(20,40,28,.18);
   }
 
-  *{box-sizing:border-box;margin:0;padding:0;}
-  html{scroll-behavior:smooth;}
-  body{
-    background:var(--paper);
-    color:var(--ink);
-    font-family:'Hanken Grotesk',sans-serif;
-    overflow-x:hidden;
-    position:relative;
-  }
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+background:var(–paper);
+color:var(–ink);
+font-family:‘Hanken Grotesk’,sans-serif;
+overflow-x:hidden;
+position:relative;
+}
 
-  /* grain overlay */
-  body::after{
-    content:"";
-    position:fixed;inset:0;
-    pointer-events:none;z-index:9999;
-    opacity:.045;
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  }
+/* grain overlay */
+body::after{
+content:””;
+position:fixed;inset:0;
+pointer-events:none;z-index:9999;
+opacity:.045;
+background-image:url(“data:image/svg+xml,%3Csvg xmlns=‘http://www.w3.org/2000/svg’ width=‘200’ height=‘200’%3E%3Cfilter id=‘n’%3E%3CfeTurbulence type=‘fractalNoise’ baseFrequency=‘0.85’ numOctaves=‘3’ stitchTiles=‘stitch’/%3E%3C/filter%3E%3Crect width=‘100%25’ height=‘100%25’ filter=‘url(%23n)’/%3E%3C/svg%3E”);
+}
 
-  a{color:inherit;}
-  ::selection{background:var(--orange);color:var(--paper);}
+a{color:inherit;}
+::selection{background:var(–orange);color:var(–paper);}
 
-  .wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
 
-  /* ---------- TOP TICKER ---------- */
-  .ticker{
-    background:var(--ink);
-    color:var(--paper);
-    overflow:hidden;
-    white-space:nowrap;
-    font-family:'Hanken Grotesk';
-    font-weight:700;
-    letter-spacing:.22em;
-    text-transform:uppercase;
-    font-size:.72rem;
-    border-bottom:3px solid var(--gold);
-  }
-  .ticker .track{
-    display:inline-block;
-    padding:11px 0;
-    animation:scroll 28s linear infinite;
-  }
-  .ticker .track span{margin:0 1.4rem;color:var(--gold-light);}
-  .ticker .track span b{color:var(--orange-soft);}
-  @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+/* ––––– TOP TICKER ––––– */
+.ticker{
+background:var(–ink);
+color:var(–paper);
+overflow:hidden;
+white-space:nowrap;
+font-family:‘Hanken Grotesk’;
+font-weight:700;
+letter-spacing:.22em;
+text-transform:uppercase;
+font-size:.72rem;
+border-bottom:3px solid var(–gold);
+}
+.ticker .track{
+display:inline-block;
+padding:11px 0;
+animation:scroll 28s linear infinite;
+}
+.ticker .track span{margin:0 1.4rem;color:var(–gold-light);}
+.ticker .track span b{color:var(–orange-soft);}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-  /* ---------- HERO ---------- */
-  .hero{
-    position:relative;
-    padding:64px 0 80px;
-    text-align:center;
-    overflow:hidden;
-    border-bottom:4px solid var(--ink);
-    background:
-      radial-gradient(circle at 50% 18%, rgba(228,87,38,.10), transparent 55%);
-  }
-  /* vintage sunburst */
-  .hero .sunburst{
-    position:absolute;
-    top:-30%;left:50%;
-    width:160vw;height:160vw;
-    max-width:1500px;max-height:1500px;
-    transform:translateX(-50%);
-    background:repeating-conic-gradient(
-      from 0deg at 50% 50%,
-      rgba(31,90,53,.07) 0deg 6deg,
-      transparent 6deg 12deg);
-    z-index:0;
-    animation:spin 120s linear infinite;
-  }
-  @keyframes spin{to{transform:translateX(-50%) rotate(360deg)}}
+/* ––––– HERO ––––– */
+.hero{
+position:relative;
+padding:64px 0 80px;
+text-align:center;
+overflow:hidden;
+border-bottom:4px solid var(–ink);
+background:
+radial-gradient(circle at 50% 18%, rgba(228,87,38,.10), transparent 55%);
+}
+/* vintage sunburst */
+.hero .sunburst{
+position:absolute;
+top:-30%;left:50%;
+width:160vw;height:160vw;
+max-width:1500px;max-height:1500px;
+transform:translateX(-50%);
+background:repeating-conic-gradient(
+from 0deg at 50% 50%,
+rgba(31,90,53,.07) 0deg 6deg,
+transparent 6deg 12deg);
+z-index:0;
+animation:spin 120s linear infinite;
+}
+@keyframes spin{to{transform:translateX(-50%) rotate(360deg)}}
 
-  .hero .inner{position:relative;z-index:2;}
+.hero .inner{position:relative;z-index:2;}
 
-  .kicker{
-    display:inline-flex;align-items:center;gap:10px;
-    font-weight:800;text-transform:uppercase;
-    letter-spacing:.28em;font-size:.7rem;
-    color:var(--green);
-    background:var(--paper);
-    border:2px solid var(--ink);
-    padding:8px 16px;
-    border-radius:40px;
-    margin-bottom:26px;
-    box-shadow:4px 4px 0 var(--ink);
-  }
-  .kicker .dot{width:7px;height:7px;border-radius:50%;background:var(--orange);box-shadow:0 0 0 3px rgba(228,87,38,.25);}
+.kicker{
+display:inline-flex;align-items:center;gap:10px;
+font-weight:800;text-transform:uppercase;
+letter-spacing:.28em;font-size:.7rem;
+color:var(–green);
+background:var(–paper);
+border:2px solid var(–ink);
+padding:8px 16px;
+border-radius:40px;
+margin-bottom:26px;
+box-shadow:4px 4px 0 var(–ink);
+}
+.kicker .dot{width:7px;height:7px;border-radius:50%;background:var(–orange);box-shadow:0 0 0 3px rgba(228,87,38,.25);}
 
-  .hero h1{
-    font-family:'Fraunces',serif;
-    font-weight:900;
-    line-height:.86;
-    letter-spacing:-.02em;
-    font-size:clamp(3.4rem,12vw,8.4rem);
-    color:var(--ink);
-    text-transform:uppercase;
-  }
-  .hero h1 .fam{display:block;color:var(--green);}
-  .hero h1 .year{
-    display:block;
-    font-style:italic;
-    color:var(--orange);
-    -webkit-text-stroke:0;
-    position:relative;
-  }
-  .hero h1 .poule{display:block;}
+.hero h1{
+font-family:‘Fraunces’,serif;
+font-weight:900;
+line-height:.86;
+letter-spacing:-.02em;
+font-size:clamp(3.4rem,12vw,8.4rem);
+color:var(–ink);
+text-transform:uppercase;
+}
+.hero h1 .fam{display:block;color:var(–green);}
+.hero h1 .year{
+display:block;
+font-style:italic;
+color:var(–orange);
+-webkit-text-stroke:0;
+position:relative;
+}
+.hero h1 .poule{display:block;}
 
-  .hero .sub{
-    max-width:560px;margin:28px auto 0;
-    font-size:clamp(1rem,2.4vw,1.25rem);
-    line-height:1.5;
-    color:var(--green-deep);
-    font-weight:500;
-  }
-  .hero .sub em{font-family:'Fraunces';font-style:italic;color:var(--orange);}
+.hero .sub{
+max-width:560px;margin:28px auto 0;
+font-size:clamp(1rem,2.4vw,1.25rem);
+line-height:1.5;
+color:var(–green-deep);
+font-weight:500;
+}
+.hero .sub em{font-family:‘Fraunces’;font-style:italic;color:var(–orange);}
 
-  /* floating decorations */
-  .deco{position:absolute;z-index:1;opacity:.9;}
-  .deco svg{display:block;}
-  .ball-1{top:14%;left:7%;width:64px;animation:float 7s ease-in-out infinite;}
-  .ball-2{bottom:16%;right:9%;width:48px;animation:float 9s ease-in-out infinite reverse;}
-  .star-1{top:20%;right:14%;width:46px;animation:twinkle 4s ease-in-out infinite;}
-  .star-2{bottom:24%;left:13%;width:34px;animation:twinkle 5s ease-in-out infinite .8s;}
-  @keyframes float{0%,100%{transform:translateY(0) rotate(-6deg)}50%{transform:translateY(-22px) rotate(8deg)}}
-  @keyframes twinkle{0%,100%{transform:scale(1) rotate(0);opacity:.5}50%{transform:scale(1.18) rotate(20deg);opacity:1}}
+/* floating decorations */
+.deco{position:absolute;z-index:1;opacity:.9;}
+.deco svg{display:block;}
+.ball-1{top:14%;left:7%;width:64px;animation:float 7s ease-in-out infinite;}
+.ball-2{bottom:16%;right:9%;width:48px;animation:float 9s ease-in-out infinite reverse;}
+.star-1{top:20%;right:14%;width:46px;animation:twinkle 4s ease-in-out infinite;}
+.star-2{bottom:24%;left:13%;width:34px;animation:twinkle 5s ease-in-out infinite .8s;}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-6deg)}50%{transform:translateY(-22px) rotate(8deg)}}
+@keyframes twinkle{0%,100%{transform:scale(1) rotate(0);opacity:.5}50%{transform:scale(1.18) rotate(20deg);opacity:1}}
 
-  /* reveal animation */
-  .reveal{opacity:0;transform:translateY(24px);animation:rise .9s cubic-bezier(.2,.7,.2,1) forwards;}
-  .d1{animation-delay:.05s}.d2{animation-delay:.18s}.d3{animation-delay:.31s}.d4{animation-delay:.44s}
-  @keyframes rise{to{opacity:1;transform:none}}
+/* reveal animation */
+.reveal{opacity:0;transform:translateY(24px);animation:rise .9s cubic-bezier(.2,.7,.2,1) forwards;}
+.d1{animation-delay:.05s}.d2{animation-delay:.18s}.d3{animation-delay:.31s}.d4{animation-delay:.44s}
+@keyframes rise{to{opacity:1;transform:none}}
 
-  /* ---------- COUNTDOWN ---------- */
-  .countdown{
-    background:var(--ink);
-    color:var(--paper);
-    padding:54px 0;
-    position:relative;
-    border-bottom:4px solid var(--ink);
-  }
-  .countdown::before{
-    content:"";position:absolute;inset:0;opacity:.5;
-    background:repeating-linear-gradient(45deg,transparent 0 13px,rgba(201,150,43,.06) 13px 14px);
-  }
-  .countdown .wrap{position:relative;}
-  .cd-label{
-    text-align:center;
-    font-weight:800;text-transform:uppercase;letter-spacing:.26em;
-    font-size:.75rem;color:var(--gold-light);margin-bottom:6px;
-  }
-  .cd-title{
-    text-align:center;
-    font-family:'Fraunces';font-style:italic;font-weight:900;
-    font-size:clamp(1.8rem,5vw,2.8rem);
-    color:var(--paper);margin-bottom:32px;
-  }
-  .cd-grid{
-    display:grid;grid-template-columns:repeat(4,1fr);
-    gap:14px;max-width:680px;margin:0 auto;
-  }
-  .cd-cell{
-    background:var(--paper);
-    color:var(--ink);
-    border-radius:14px;
-    padding:22px 8px 16px;
-    text-align:center;
-    box-shadow:6px 6px 0 var(--gold);
-    border:2px solid var(--ink);
-    position:relative;
-  }
-  .cd-cell .num{
-    font-family:'Fraunces';font-weight:900;
-    font-size:clamp(2.2rem,7vw,3.6rem);
-    line-height:1;color:var(--green);
-    font-variant-numeric:tabular-nums;
-  }
-  .cd-cell .unit{
-    margin-top:8px;text-transform:uppercase;
-    font-weight:800;letter-spacing:.14em;font-size:.66rem;color:var(--orange);
-  }
-  .cd-done{
-    text-align:center;font-family:'Fraunces';font-style:italic;
-    font-size:1.6rem;color:var(--gold-light);
-  }
+/* ––––– COUNTDOWN ––––– */
+.countdown{
+background:var(–ink);
+color:var(–paper);
+padding:54px 0;
+position:relative;
+border-bottom:4px solid var(–ink);
+}
+.countdown::before{
+content:””;position:absolute;inset:0;opacity:.5;
+background:repeating-linear-gradient(45deg,transparent 0 13px,rgba(201,150,43,.06) 13px 14px);
+}
+.countdown .wrap{position:relative;}
+.cd-label{
+text-align:center;
+font-weight:800;text-transform:uppercase;letter-spacing:.26em;
+font-size:.75rem;color:var(–gold-light);margin-bottom:6px;
+}
+.cd-title{
+text-align:center;
+font-family:‘Fraunces’;font-style:italic;font-weight:900;
+font-size:clamp(1.8rem,5vw,2.8rem);
+color:var(–paper);margin-bottom:32px;
+}
+.cd-grid{
+display:grid;grid-template-columns:repeat(4,1fr);
+gap:14px;max-width:680px;margin:0 auto;
+}
+.cd-cell{
+background:var(–paper);
+color:var(–ink);
+border-radius:14px;
+padding:22px 8px 16px;
+text-align:center;
+box-shadow:6px 6px 0 var(–gold);
+border:2px solid var(–ink);
+position:relative;
+}
+.cd-cell .num{
+font-family:‘Fraunces’;font-weight:900;
+font-size:clamp(2.2rem,7vw,3.6rem);
+line-height:1;color:var(–green);
+font-variant-numeric:tabular-nums;
+}
+.cd-cell .unit{
+margin-top:8px;text-transform:uppercase;
+font-weight:800;letter-spacing:.14em;font-size:.66rem;color:var(–orange);
+}
+.cd-done{
+text-align:center;font-family:‘Fraunces’;font-style:italic;
+font-size:1.6rem;color:var(–gold-light);
+}
 
-  /* ---------- STANDINGS ---------- */
-  .standings{padding:74px 0 90px;}
-  .section-head{text-align:center;margin-bottom:42px;}
-  .section-head .eyebrow{
-    display:inline-block;
-    font-weight:800;text-transform:uppercase;letter-spacing:.26em;
-    font-size:.72rem;color:var(--orange);margin-bottom:14px;
-  }
-  .section-head h2{
-    font-family:'Fraunces';font-weight:900;
-    font-size:clamp(2.4rem,7vw,4.2rem);
-    line-height:.95;color:var(--ink);text-transform:uppercase;
-  }
-  .section-head p{
-    margin:16px auto 0;max-width:520px;
-    color:var(--green-deep);font-weight:500;font-size:1.02rem;line-height:1.5;
-  }
+/* ––––– STANDINGS ––––– */
+.standings{padding:74px 0 90px;}
+.section-head{text-align:center;margin-bottom:42px;}
+.section-head .eyebrow{
+display:inline-block;
+font-weight:800;text-transform:uppercase;letter-spacing:.26em;
+font-size:.72rem;color:var(–orange);margin-bottom:14px;
+}
+.section-head h2{
+font-family:‘Fraunces’;font-weight:900;
+font-size:clamp(2.4rem,7vw,4.2rem);
+line-height:.95;color:var(–ink);text-transform:uppercase;
+}
+.section-head p{
+margin:16px auto 0;max-width:520px;
+color:var(–green-deep);font-weight:500;font-size:1.02rem;line-height:1.5;
+}
 
-  .board{
-    background:var(--paper);
-    border:3px solid var(--ink);
-    border-radius:20px;
-    box-shadow:12px 12px 0 var(--green);
-    overflow:hidden;
-    position:relative;
-  }
-  .board-top{
-    display:flex;align-items:center;justify-content:space-between;
-    gap:16px;flex-wrap:wrap;
-    background:var(--green);
-    color:var(--paper);
-    padding:18px 26px;
-    border-bottom:3px solid var(--ink);
-  }
-  .board-top .bt-title{
-    display:flex;align-items:center;gap:12px;
-    font-family:'Fraunces';font-weight:900;font-style:italic;
-    font-size:1.35rem;letter-spacing:.01em;
-  }
-  .board-top .bt-title svg{width:26px;height:26px;flex:none;}
-  .board-top .bt-tag{
-    font-weight:800;text-transform:uppercase;letter-spacing:.16em;
-    font-size:.66rem;background:var(--gold);color:var(--ink);
-    padding:6px 12px;border-radius:30px;border:2px solid var(--ink);
-  }
-  .board-body{padding:14px 18px 26px;}
+.board{
+background:var(–paper);
+border:3px solid var(–ink);
+border-radius:20px;
+box-shadow:12px 12px 0 var(–green);
+overflow:hidden;
+position:relative;
+}
+.board-top{
+display:flex;align-items:center;justify-content:space-between;
+gap:16px;flex-wrap:wrap;
+background:var(–green);
+color:var(–paper);
+padding:18px 26px;
+border-bottom:3px solid var(–ink);
+}
+.board-top .bt-title{
+display:flex;align-items:center;gap:12px;
+font-family:‘Fraunces’;font-weight:900;font-style:italic;
+font-size:1.35rem;letter-spacing:.01em;
+}
+.board-top .bt-title svg{width:26px;height:26px;flex:none;}
+.board-top .bt-tag{
+font-weight:800;text-transform:uppercase;letter-spacing:.16em;
+font-size:.66rem;background:var(–gold);color:var(–ink);
+padding:6px 12px;border-radius:30px;border:2px solid var(–ink);
+}
+.board-body{padding:14px 18px 26px;}
 
-  /* loading / fallback */
-  .widget-loading,.widget-fallback{
-    text-align:center;padding:48px 20px;color:var(--green-deep);font-weight:600;
-  }
-  .widget-loading .spinner{
-    width:34px;height:34px;border-radius:50%;
-    border:4px solid var(--paper-2);border-top-color:var(--orange);
-    margin:0 auto 16px;animation:rot 1s linear infinite;
-  }
-  @keyframes rot{to{transform:rotate(360deg)}}
-  .widget-fallback a{color:var(--orange);font-weight:800;}
+/* loading / fallback */
+.widget-loading,.widget-fallback{
+text-align:center;padding:48px 20px;color:var(–green-deep);font-weight:600;
+}
+.widget-loading .spinner{
+width:34px;height:34px;border-radius:50%;
+border:4px solid var(–paper-2);border-top-color:var(–orange);
+margin:0 auto 16px;animation:rot 1s linear infinite;
+}
+@keyframes rot{to{transform:rotate(360deg)}}
+.widget-fallback a{color:var(–orange);font-weight:800;}
 
-  /* generic styling for whatever the wkpooltjes widget injects */
-  .ranking-widget-fetch-area table{
-    width:100%;border-collapse:collapse;font-size:.96rem;
-  }
-  .ranking-widget-fetch-area th{
-    text-align:left;padding:12px 14px;
-    text-transform:uppercase;letter-spacing:.08em;font-size:.7rem;
-    color:var(--green);border-bottom:2px solid var(--ink);font-weight:800;
-  }
-  .ranking-widget-fetch-area td{
-    padding:13px 14px;border-bottom:1px solid rgba(20,40,28,.12);font-weight:600;
-  }
-  .ranking-widget-fetch-area tr:nth-child(even) td{background:rgba(31,90,53,.05);}
-  .ranking-widget-fetch-area tr:first-child td{font-weight:800;}
-  .ranking-widget-fetch-area img{vertical-align:middle;}
+/* generic styling for whatever the wkpooltjes widget injects */
+.ranking-widget-fetch-area table{
+width:100%;border-collapse:collapse;font-size:.96rem;
+}
+.ranking-widget-fetch-area th{
+text-align:left;padding:12px 14px;
+text-transform:uppercase;letter-spacing:.08em;font-size:.7rem;
+color:var(–green);border-bottom:2px solid var(–ink);font-weight:800;
+}
+.ranking-widget-fetch-area td{
+padding:13px 14px;border-bottom:1px solid rgba(20,40,28,.12);font-weight:600;
+}
+.ranking-widget-fetch-area tr:nth-child(even) td{background:rgba(31,90,53,.05);}
+.ranking-widget-fetch-area tr:first-child td{font-weight:800;}
+.ranking-widget-fetch-area img{vertical-align:middle;}
 
-  .ranking-widget-footer{
-    padding:14px 26px;border-top:3px solid var(--ink);
-    background:var(--paper-2);
-  }
+.ranking-widget-footer{
+padding:14px 26px;border-top:3px solid var(–ink);
+background:var(–paper-2);
+}
 
-  /* ---------- FOOTER ---------- */
-  footer{
-    background:var(--ink);color:var(--paper);
-    text-align:center;padding:46px 24px;
-    border-top:4px solid var(--gold);
-  }
-  footer .crest{font-size:1.6rem;margin-bottom:10px;}
-  footer h3{font-family:'Fraunces';font-style:italic;font-weight:900;font-size:1.5rem;margin-bottom:8px;}
-  footer p{color:rgba(244,232,208,.7);font-size:.9rem;max-width:440px;margin:0 auto;line-height:1.5;}
-  footer .heart{color:var(--orange-soft);}
+/* ––––– FOOTER ––––– */
+footer{
+background:var(–ink);color:var(–paper);
+text-align:center;padding:46px 24px;
+border-top:4px solid var(–gold);
+}
+footer .crest{font-size:1.6rem;margin-bottom:10px;}
+footer h3{font-family:‘Fraunces’;font-style:italic;font-weight:900;font-size:1.5rem;margin-bottom:8px;}
+footer p{color:rgba(244,232,208,.7);font-size:.9rem;max-width:440px;margin:0 auto;line-height:1.5;}
+footer .heart{color:var(–orange-soft);}
 
-  /* ---------- TIMELINE / BUMP CHART ---------- */
-  .timeline{
-    padding:30px 0 90px;
-    background:
-      radial-gradient(circle at 80% 0%, rgba(201,150,43,.10), transparent 45%);
-  }
-  .chart-card{
-    background:var(--paper);
-    border:3px solid var(--ink);
-    border-radius:20px;
-    box-shadow:12px 12px 0 var(--orange);
-    overflow:hidden;
-  }
-  .chart-card .board-top{background:var(--green-deep);box-shadow:none;}
-  .chart-card .board-top .bt-tag{background:var(--orange-soft);}
-  .chart-body{padding:10px 14px 8px;}
-  #bumpchart{width:100%;height:auto;display:block;font-family:'Hanken Grotesk',sans-serif;}
+/* ––––– TIMELINE / BUMP CHART ––––– */
+.timeline{
+padding:30px 0 90px;
+background:
+radial-gradient(circle at 80% 0%, rgba(201,150,43,.10), transparent 45%);
+}
+.chart-card{
+background:var(–paper);
+border:3px solid var(–ink);
+border-radius:20px;
+box-shadow:12px 12px 0 var(–orange);
+overflow:hidden;
+}
+.chart-card .board-top{background:var(–green-deep);box-shadow:none;}
+.chart-card .board-top .bt-tag{background:var(–orange-soft);}
+.chart-body{padding:10px 14px 8px;}
+#bumpchart{width:100%;height:auto;display:block;font-family:‘Hanken Grotesk’,sans-serif;}
 
-  .bump-line{fill:none;stroke-width:3.4;stroke-linecap:round;stroke-linejoin:round;
-    transition:opacity .2s,stroke-width .2s;}
-  .bump-dot{stroke:var(--paper);stroke-width:2.5;transition:opacity .2s,r .2s;}
-  .bump-name{font-weight:800;font-size:14px;dominant-baseline:middle;}
-  .bump-rankguide{fill:rgba(20,40,28,.28);font-weight:800;font-size:12px;}
-  .bump-grid{stroke:rgba(20,40,28,.10);stroke-width:1;}
-  .bump-datelabel{fill:var(--green-deep);font-weight:700;font-size:11px;text-anchor:middle;}
-  .bump-series.dim .bump-line{opacity:.16;}
-  .bump-series.dim .bump-dot{opacity:.18;}
-  .bump-series.dim .bump-name{opacity:.25;}
-  .bump-series{cursor:pointer;}
-  .bump-series.hot .bump-line{stroke-width:5;}
-  .crown{font-size:15px;}
+.bump-line{fill:none;stroke-width:3.4;stroke-linecap:round;stroke-linejoin:round;
+transition:opacity .2s,stroke-width .2s;}
+.bump-dot{stroke:var(–paper);stroke-width:2.5;transition:opacity .2s,r .2s;}
+.bump-name{font-weight:800;font-size:14px;dominant-baseline:middle;}
+.bump-rankguide{fill:rgba(20,40,28,.28);font-weight:800;font-size:12px;}
+.bump-grid{stroke:rgba(20,40,28,.10);stroke-width:1;}
+.bump-datelabel{fill:var(–green-deep);font-weight:700;font-size:11px;text-anchor:middle;}
+.bump-series.dim .bump-line{opacity:.16;}
+.bump-series.dim .bump-dot{opacity:.18;}
+.bump-series.dim .bump-name{opacity:.25;}
+.bump-series{cursor:pointer;}
+.bump-series.hot .bump-line{stroke-width:5;}
+.crown{font-size:15px;}
 
-  .chart-legend{
-    display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:center;
-    padding:6px 18px 22px;
-  }
-  .chart-legend .lg{
-    display:inline-flex;align-items:center;gap:7px;
-    font-weight:700;font-size:.84rem;cursor:pointer;
-    padding:4px 10px;border-radius:30px;border:2px solid transparent;
-    transition:border-color .15s,background .15s;
-  }
-  .chart-legend .lg:hover{border-color:var(--ink);background:rgba(20,40,28,.04);}
-  .chart-legend .lg .sw{width:13px;height:13px;border-radius:50%;border:2px solid var(--ink);}
+.chart-legend{
+display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:center;
+padding:6px 18px 22px;
+}
+.chart-legend .lg{
+display:inline-flex;align-items:center;gap:7px;
+font-weight:700;font-size:.84rem;cursor:pointer;
+padding:4px 10px;border-radius:30px;border:2px solid transparent;
+transition:border-color .15s,background .15s;
+}
+.chart-legend .lg:hover{border-color:var(–ink);background:rgba(20,40,28,.04);}
+.chart-legend .lg .sw{width:13px;height:13px;border-radius:50%;border:2px solid var(–ink);}
 
-  .chart-note{
-    text-align:center;color:var(--green-deep);font-weight:600;
-    font-size:.84rem;padding:0 20px 22px;opacity:.8;
-  }
-  .chart-empty{
-    text-align:center;padding:60px 24px;color:var(--green-deep);
-  }
-  .chart-empty .big{font-family:'Fraunces';font-style:italic;font-weight:900;
-    font-size:1.5rem;color:var(--ink);margin-bottom:10px;}
-  .chart-empty .demo-tag{
-    display:inline-block;margin-top:14px;font-size:.72rem;font-weight:800;
-    text-transform:uppercase;letter-spacing:.12em;color:var(--orange);
-    background:rgba(228,87,38,.10);border:2px solid var(--orange);
-    padding:5px 12px;border-radius:30px;}
+.chart-note{
+text-align:center;color:var(–green-deep);font-weight:600;
+font-size:.84rem;padding:0 20px 22px;opacity:.8;
+}
+.chart-empty{
+text-align:center;padding:60px 24px;color:var(–green-deep);
+}
+.chart-empty .big{font-family:‘Fraunces’;font-style:italic;font-weight:900;
+font-size:1.5rem;color:var(–ink);margin-bottom:10px;}
+.chart-empty .demo-tag{
+display:inline-block;margin-top:14px;font-size:.72rem;font-weight:800;
+text-transform:uppercase;letter-spacing:.12em;color:var(–orange);
+background:rgba(228,87,38,.10);border:2px solid var(–orange);
+padding:5px 12px;border-radius:30px;}
 
-  @media(max-width:560px){
-    .cd-grid{grid-template-columns:repeat(2,1fr);}
-    .board{box-shadow:7px 7px 0 var(--green);}
-    .chart-card{box-shadow:7px 7px 0 var(--orange);}
-    .hero{padding:46px 0 56px;}
-    .deco{display:none;}
-    .bump-name{font-size:12px;}
-  }
+@media(max-width:560px){
+.cd-grid{grid-template-columns:repeat(2,1fr);}
+.board{box-shadow:7px 7px 0 var(–green);}
+.chart-card{box-shadow:7px 7px 0 var(–orange);}
+.hero{padding:46px 0 56px;}
+.deco{display:none;}
+.bump-name{font-size:12px;}
+}
+
+/* ===================== SPICE: shared ===================== */
+.delta-up{color:var(–green);} .delta-down{color:var(–orange);} .delta-flat{color:#9b8b67;}
+.demo-pill{display:inline-block;margin-left:8px;font-size:.6rem;font-weight:800;text-transform:uppercase;
+letter-spacing:.1em;color:var(–orange);background:rgba(228,87,38,.10);border:1.5px solid var(–orange);
+padding:3px 8px;border-radius:30px;vertical-align:middle;}
+
+/* ===================== PODIUM ===================== */
+.podium{padding:74px 0 30px;position:relative;}
+.new-leader-ribbon{
+display:none;margin:0 auto 26px;width:max-content;max-width:90%;
+background:var(–orange);color:var(–paper);font-family:‘Fraunces’;font-style:italic;font-weight:900;
+font-size:1.05rem;padding:10px 22px;border-radius:40px;border:2.5px solid var(–ink);
+box-shadow:5px 5px 0 var(–ink);animation:pop .5s cubic-bezier(.2,1.4,.4,1) both;
+}
+@keyframes pop{from{transform:scale(.6);opacity:0}to{transform:scale(1);opacity:1}}
+.podium-stage{
+display:flex;justify-content:center;align-items:flex-end;gap:14px;max-width:760px;margin:0 auto;
+}
+.pod{flex:1;max-width:230px;text-align:center;animation:rise .8s cubic-bezier(.2,.7,.2,1) both;}
+.pod .medal{font-size:1.7rem;line-height:1;margin-bottom:6px;}
+.pod .who{
+font-family:‘Fraunces’;font-weight:900;font-size:clamp(1rem,3vw,1.4rem);
+color:var(–ink);line-height:1;margin-bottom:3px;word-break:break-word;}
+.pod .crown{display:block;font-size:1.6rem;margin-bottom:2px;}
+.pod .pts{font-weight:800;color:var(–green-deep);font-size:.95rem;}
+.pod .pts span{font-variant-numeric:tabular-nums;}
+.pod .chip{
+display:inline-block;margin-top:6px;font-size:.7rem;font-weight:800;
+padding:2px 9px;border-radius:30px;border:1.5px solid currentColor;}
+.pod .block{
+margin-top:12px;border:3px solid var(–ink);border-radius:14px 14px 0 0;
+display:flex;align-items:flex-start;justify-content:center;padding-top:12px;
+font-family:‘Fraunces’;font-weight:900;color:var(–paper);font-size:2rem;
+}
+.pod-1 .block{height:150px;background:var(–gold);box-shadow:inset 0 -6px 0 rgba(20,40,28,.18);}
+.pod-2 .block{height:108px;background:#B9A98C;box-shadow:inset 0 -6px 0 rgba(20,40,28,.18);}
+.pod-3 .block{height:80px;background:#C98A4B;box-shadow:inset 0 -6px 0 rgba(20,40,28,.18);}
+.pod-1{order:2;} .pod-2{order:1;animation-delay:.12s;} .pod-3{order:3;animation-delay:.24s;}
+
+/* movers + lead stat */
+.movers{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:760px;margin:34px auto 0;}
+.mover{
+background:var(–paper);border:3px solid var(–ink);border-radius:16px;padding:16px 18px;
+box-shadow:6px 6px 0 var(–green);display:flex;align-items:center;gap:14px;}
+.mover.fall{box-shadow:6px 6px 0 var(–orange);}
+.mover .emoji{font-size:1.9rem;flex:none;}
+.mover .lbl{font-size:.66rem;font-weight:800;text-transform:uppercase;letter-spacing:.14em;color:var(–green);}
+.mover.fall .lbl{color:var(–orange);}
+.mover .nm{font-family:‘Fraunces’;font-weight:900;font-size:1.25rem;color:var(–ink);line-height:1.1;}
+.mover .mv{font-weight:800;font-size:.85rem;}
+.leadstat{
+text-align:center;margin:22px auto 0;max-width:760px;color:var(–green-deep);
+font-weight:600;font-size:.92rem;display:flex;gap:10px 24px;justify-content:center;flex-wrap:wrap;}
+.leadstat b{font-family:‘Fraunces’;font-weight:900;color:var(–ink);}
+
+/* ===================== STATS LEADERBOARD ===================== */
+.stats-section{padding:30px 0 30px;}
+.stats-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+table.stats{width:100%;border-collapse:collapse;min-width:560px;}
+table.stats th{
+text-align:left;padding:12px 12px;font-size:.66rem;text-transform:uppercase;letter-spacing:.08em;
+color:var(–green);border-bottom:2px solid var(–ink);font-weight:800;white-space:nowrap;}
+table.stats td{padding:12px 12px;border-bottom:1px solid rgba(20,40,28,.12);font-weight:600;white-space:nowrap;}
+table.stats tr:nth-child(even) td{background:rgba(31,90,53,.05);}
+table.stats .rk{font-family:‘Fraunces’;font-weight:900;color:var(–green);width:34px;}
+table.stats .nm{display:flex;align-items:center;gap:9px;font-weight:800;color:var(–ink);}
+table.stats .sw{width:12px;height:12px;border-radius:50%;border:2px solid var(–ink);flex:none;}
+table.stats .pts{font-variant-numeric:tabular-nums;}
+table.stats .crown{margin-left:4px;}
+.form-arrows{letter-spacing:1px;font-size:.95rem;}
+
+/* ===================== POINTS PER DAY ===================== */
+.ppd-row{display:flex;align-items:center;gap:12px;margin:9px 0;}
+.ppd-name{flex:0 0 116px;text-align:right;font-weight:800;color:var(–ink);font-size:.9rem;
+overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.ppd-track{flex:1;background:rgba(20,40,28,.07);border-radius:30px;height:24px;overflow:hidden;}
+.ppd-fill{height:100%;border-radius:30px;width:0;transition:width 1.1s cubic-bezier(.2,.8,.2,1);
+display:flex;align-items:center;justify-content:flex-end;padding-right:9px;
+color:var(–paper);font-weight:800;font-size:.78rem;}
+.ppd-fill.zero{background:transparent!important;color:var(–green-deep);padding-right:0;padding-left:9px;justify-content:flex-start;}
+
+/* ===================== SPOTLIGHT / HEAD-TO-HEAD ===================== */
+.spotlight{padding:30px 0 90px;}
+.spot-controls{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-bottom:24px;}
+.spot-controls label{display:flex;flex-direction:column;gap:5px;font-size:.66rem;font-weight:800;
+text-transform:uppercase;letter-spacing:.12em;color:var(–green);}
+.spot-controls select{
+font-family:‘Hanken Grotesk’;font-weight:700;font-size:.95rem;color:var(–ink);
+background:var(–paper);border:2.5px solid var(–ink);border-radius:12px;padding:9px 14px;
+box-shadow:3px 3px 0 var(–ink);cursor:pointer;min-width:160px;}
+.spot-card{
+background:var(–paper);border:3px solid var(–ink);border-radius:18px;
+box-shadow:10px 10px 0 var(–gold);padding:24px;}
+.spot-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:14px;margin-bottom:18px;}
+.spot-stat{background:rgba(31,90,53,.05);border:2px solid var(–ink);border-radius:12px;padding:12px 14px;text-align:center;}
+.spot-stat .v{font-family:‘Fraunces’;font-weight:900;font-size:1.5rem;color:var(–green);line-height:1;}
+.spot-stat .v.small{font-size:1.05rem;}
+.spot-stat .k{margin-top:6px;font-size:.62rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(–orange);}
+.spot-verdict{text-align:center;font-family:‘Fraunces’;font-style:italic;font-weight:900;
+font-size:1.25rem;color:var(–ink);margin-bottom:16px;}
+.spot-spark{width:100%;height:auto;display:block;}
+.spot-h2h-legend{display:flex;gap:18px;justify-content:center;margin-top:12px;font-weight:700;font-size:.85rem;}
+.spot-h2h-legend span{display:inline-flex;align-items:center;gap:7px;}
+.spot-h2h-legend .sw{width:13px;height:13px;border-radius:50%;border:2px solid var(–ink);}
+
+/* ===================== CONFETTI ===================== */
+#confetti{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:9998;}
+
+@media(max-width:560px){
+.podium{padding:54px 0 24px;}
+.pod .block{font-size:1.4rem;}
+.pod-1 .block{height:118px;} .pod-2 .block{height:88px;} .pod-3 .block{height:64px;}
+.movers{grid-template-columns:1fr;}
+.pod .who{font-size:1rem;}
+}
 </style>
+
 </head>
 <body>
 
   <!-- TOP TICKER -->
+
   <div class="ticker">
     <div class="track">
       <span>⚽ FIFA WERELDKAMPIOENSCHAP 2026</span><span><b>·</b></span>
@@ -384,35 +503,40 @@
   </div>
 
   <!-- HERO -->
+
   <header class="hero">
     <div class="sunburst"></div>
 
-    <div class="deco ball-1">
-      <svg viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="46" fill="#F4E8D0" stroke="#14281C" stroke-width="4"/><path d="M50 28l11 8-4 13H43l-4-13z" fill="#14281C"/><path d="M50 28V14M61 36l12-7M57 49l13 4M43 49l-13 4M39 36L27 29" stroke="#14281C" stroke-width="3" stroke-linecap="round"/></svg>
-    </div>
-    <div class="deco ball-2">
-      <svg viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="46" fill="#E45726" stroke="#14281C" stroke-width="4"/><path d="M50 28l11 8-4 13H43l-4-13z" fill="#14281C"/></svg>
-    </div>
-    <div class="deco star-1">
-      <svg viewBox="0 0 24 24" fill="#C9962B" stroke="#14281C" stroke-width="1.5"><path d="M12 1l3 7 7 .5-5.5 4.5 2 7L12 17l-6.5 3 2-7L2 8.5 9 8z"/></svg>
-    </div>
-    <div class="deco star-2">
-      <svg viewBox="0 0 24 24" fill="#1F5A35" stroke="#14281C" stroke-width="1.5"><path d="M12 1l3 7 7 .5-5.5 4.5 2 7L12 17l-6.5 3 2-7L2 8.5 9 8z"/></svg>
-    </div>
+```
+<div class="deco ball-1">
+  <svg viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="46" fill="#F4E8D0" stroke="#14281C" stroke-width="4"/><path d="M50 28l11 8-4 13H43l-4-13z" fill="#14281C"/><path d="M50 28V14M61 36l12-7M57 49l13 4M43 49l-13 4M39 36L27 29" stroke="#14281C" stroke-width="3" stroke-linecap="round"/></svg>
+</div>
+<div class="deco ball-2">
+  <svg viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="46" fill="#E45726" stroke="#14281C" stroke-width="4"/><path d="M50 28l11 8-4 13H43l-4-13z" fill="#14281C"/></svg>
+</div>
+<div class="deco star-1">
+  <svg viewBox="0 0 24 24" fill="#C9962B" stroke="#14281C" stroke-width="1.5"><path d="M12 1l3 7 7 .5-5.5 4.5 2 7L12 17l-6.5 3 2-7L2 8.5 9 8z"/></svg>
+</div>
+<div class="deco star-2">
+  <svg viewBox="0 0 24 24" fill="#1F5A35" stroke="#14281C" stroke-width="1.5"><path d="M12 1l3 7 7 .5-5.5 4.5 2 7L12 17l-6.5 3 2-7L2 8.5 9 8z"/></svg>
+</div>
 
-    <div class="inner wrap">
-      <span class="kicker reveal d1"><span class="dot"></span> De officiële familiepoule</span>
-      <h1>
-        <span class="fam reveal d1">Familie</span>
-        <span class="poule reveal d2">WK Poule</span>
-        <span class="year reveal d3">2026</span>
-      </h1>
-      <p class="sub reveal d4">Voorspel de wedstrijden, verzamel je punten en strijd om de eeuwige roem.
-      Wie van ons wordt de <em>wereldkampioen-voorspeller</em> van de familie?</p>
-    </div>
+<div class="inner wrap">
+  <span class="kicker reveal d1"><span class="dot"></span> De officiële familiepoule</span>
+  <h1>
+    <span class="fam reveal d1">Familie</span>
+    <span class="poule reveal d2">WK Poule</span>
+    <span class="year reveal d3">2026</span>
+  </h1>
+  <p class="sub reveal d4">Voorspel de wedstrijden, verzamel je punten en strijd om de eeuwige roem.
+  Wie van ons wordt de <em>wereldkampioen-voorspeller</em> van de familie?</p>
+</div>
+```
+
   </header>
 
   <!-- COUNTDOWN -->
+
   <section class="countdown">
     <div class="wrap">
       <p class="cd-label">⚽ Aftellen naar de aftrap</p>
@@ -426,7 +550,28 @@
     </div>
   </section>
 
+<canvas id="confetti"></canvas>
+
+  <!-- PODIUM -->
+
+  <section class="podium">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">★ Op het ereschavot ★</span>
+        <h2>Het Podium</h2>
+        <p>De top drie van het moment. Goud, zilver en brons — voorlopig dan toch.</p>
+      </div>
+      <div class="new-leader-ribbon" id="new-leader-ribbon"></div>
+      <div class="podium-stage" id="podium-stage">
+        <div class="chart-empty" style="margin:0 auto"><div class="big">Even geduld…</div></div>
+      </div>
+      <div class="movers" id="movers"></div>
+      <div class="leadstat" id="leadstat"></div>
+    </div>
+  </section>
+
   <!-- STANDINGS -->
+
   <section class="standings">
     <div class="wrap">
       <div class="section-head">
@@ -435,52 +580,82 @@
         <p>De actuele ranglijst van onze poule — ververst automatisch. Hoe hoger op de lijst, hoe groter de eer aan de familietafel.</p>
       </div>
 
+```
+  <div class="board">
+    <div class="board-top">
+      <div class="bt-title">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#F4E8D0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 1-2-2V5h4M18 9h2a2 2 0 0 0 2-2V5h-4M6 4h12v6a6 6 0 0 1-12 0V4zM12 16v3M8 22h8M9 19h6"/></svg>
+        Stand van zaken
+      </div>
+      <span class="bt-tag">● Live</span>
+    </div>
+    <div class="board-body">
+
+      <!-- ====== WKPooltjes ranking widget ====== -->
+      <!-- Begin ranking widget WKPooltjes -->
+      <div class="ranking-widget">
+        <div class="ranking-widget-fetch-area">
+          <div class="widget-loading">
+            <div class="spinner"></div>
+            Klassement wordt geladen…
+          </div>
+        </div>
+        <script>
+          (function () {
+            var area = document.querySelector('.ranking-widget-fetch-area');
+            fetch('https://www.wkpooltjes.nl/rankingpoolwidget/b536afe31e61385d1494d8033e2f8e01/127/')
+              .then(function (r) { return r.text(); })
+              .then(function (h) { area.innerHTML = h; })
+              .catch(function () {
+                area.innerHTML = '<div class="widget-fallback">Het klassement kon even niet geladen worden.<br>Ververs de pagina of bekijk het op <a href="https://www.wkpooltjes.nl" target="_blank" rel="noopener">wkpooltjes.nl</a>.</div>';
+              });
+          })();
+        </script>
+        <div class="ranking-widget-footer" style="display:flex;align-items:center;justify-content:end;font-size:12px;color:#999999;">
+          Ranglijst mogelijk gemaakt door
+          <a href="https://www.wkpooltjes.nl" target="_blank" rel="noopener" style="color:#999999;text-decoration:none;display:flex;align-items:center;">
+            <img src="https://cdn01.wkpooltjes.nl/gfx/core/logo-branding-wkpooltjes.png" height="16px" style="width:auto;height:16px;display:inline;border:none;margin:0 5px;" />
+            dé wk poule engine</a>
+        </div>
+      </div>
+      <!-- End ranking widget WKPooltjes -->
+      <!-- ====== /WKPooltjes ranking widget ====== -->
+
+    </div>
+  </div>
+</div>
+```
+
+  </section>
+
+  <!-- STATS LEADERBOARD -->
+
+  <section class="stats-section">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">★ De cijfers achter de stand ★</span>
+        <h2>De Cijfers</h2>
+        <p>Achterstand op de koploper, winst sinds gisteren, vorm en dagen aan kop — alles in één oogopslag.</p>
+      </div>
       <div class="board">
         <div class="board-top">
           <div class="bt-title">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#F4E8D0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 1-2-2V5h4M18 9h2a2 2 0 0 0 2-2V5h-4M6 4h12v6a6 6 0 0 1-12 0V4zM12 16v3M8 22h8M9 19h6"/></svg>
-            Stand van zaken
+            <svg viewBox="0 0 24 24" fill="none" stroke="#F4E8D0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4v16h16M8 16V9M12 16V5M16 16v-4M20 16v-7"/></svg>
+            Statistieken
           </div>
-          <span class="bt-tag">● Live</span>
+          <span class="bt-tag" id="stats-tag">—</span>
         </div>
         <div class="board-body">
-
-          <!-- ====== WKPooltjes ranking widget ====== -->
-          <!-- Begin ranking widget WKPooltjes -->
-          <div class="ranking-widget">
-            <div class="ranking-widget-fetch-area">
-              <div class="widget-loading">
-                <div class="spinner"></div>
-                Klassement wordt geladen…
-              </div>
-            </div>
-            <script>
-              (function () {
-                var area = document.querySelector('.ranking-widget-fetch-area');
-                fetch('https://www.wkpooltjes.nl/rankingpoolwidget/b536afe31e61385d1494d8033e2f8e01/127/')
-                  .then(function (r) { return r.text(); })
-                  .then(function (h) { area.innerHTML = h; })
-                  .catch(function () {
-                    area.innerHTML = '<div class="widget-fallback">Het klassement kon even niet geladen worden.<br>Ververs de pagina of bekijk het op <a href="https://www.wkpooltjes.nl" target="_blank" rel="noopener">wkpooltjes.nl</a>.</div>';
-                  });
-              })();
-            </script>
-            <div class="ranking-widget-footer" style="display:flex;align-items:center;justify-content:end;font-size:12px;color:#999999;">
-              Ranglijst mogelijk gemaakt door
-              <a href="https://www.wkpooltjes.nl" target="_blank" rel="noopener" style="color:#999999;text-decoration:none;display:flex;align-items:center;">
-                <img src="https://cdn01.wkpooltjes.nl/gfx/core/logo-branding-wkpooltjes.png" height="16px" style="width:auto;height:16px;display:inline;border:none;margin:0 5px;" />
-                dé wk poule engine</a>
-            </div>
+          <div class="stats-scroll" id="statsboard">
+            <div class="chart-empty"><div class="big">Even geduld…</div></div>
           </div>
-          <!-- End ranking widget WKPooltjes -->
-          <!-- ====== /WKPooltjes ranking widget ====== -->
-
         </div>
       </div>
     </div>
   </section>
 
   <!-- TIMELINE / BUMP CHART -->
+
   <section class="timeline">
     <div class="wrap">
       <div class="section-head">
@@ -489,24 +664,60 @@
         <p>Dag na dag bijgehouden: wie klimt, wie zakt, en wie houdt stand. Volg hieronder hoe de strijd zich ontvouwt door het hele toernooi heen.</p>
       </div>
 
-      <div class="chart-card">
-        <div class="board-top">
-          <div class="bt-title">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#F4E8D0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18M7 15l4-5 3 3 5-7"/></svg>
-            Klassement per dag
-          </div>
-          <span class="bt-tag">Bijgewerkt</span>
+```
+  <div class="chart-card">
+    <div class="board-top">
+      <div class="bt-title">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#F4E8D0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18M7 15l4-5 3 3 5-7"/></svg>
+        Klassement per dag
+      </div>
+      <span class="bt-tag">Bijgewerkt</span>
+    </div>
+    <div class="chart-body">
+      <div id="bump-wrap">
+        <div class="chart-empty">
+          <div class="spinner" style="width:34px;height:34px;border-radius:50%;border:4px solid var(--paper-2);border-top-color:var(--orange);margin:0 auto 16px;animation:rot 1s linear infinite;"></div>
+          Tijdlijn wordt geladen…
         </div>
-        <div class="chart-body">
-          <div id="bump-wrap">
-            <div class="chart-empty">
-              <div class="spinner" style="width:34px;height:34px;border-radius:50%;border:4px solid var(--paper-2);border-top-color:var(--orange);margin:0 auto 16px;animation:rot 1s linear infinite;"></div>
-              Tijdlijn wordt geladen…
-            </div>
-          </div>
-        </div>
-        <div class="chart-legend" id="bump-legend"></div>
-        <div class="chart-note" id="bump-note"></div>
+      </div>
+    </div>
+    <div class="chart-legend" id="bump-legend"></div>
+    <div class="chart-note" id="bump-note"></div>
+  </div>
+
+  <div class="chart-card" style="margin-top:28px;box-shadow:12px 12px 0 var(--green);">
+    <div class="board-top" style="background:var(--green);">
+      <div class="bt-title">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#F4E8D0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
+        Punten per dag
+      </div>
+      <span class="bt-tag" id="ppd-tag">—</span>
+    </div>
+    <div class="chart-body">
+      <div id="ppd-wrap"><div class="chart-empty"><div class="big">Even geduld…</div></div></div>
+    </div>
+    <div class="chart-note" id="ppd-note"></div>
+  </div>
+</div>
+```
+
+  </section>
+
+  <!-- SPOTLIGHT / HEAD-TO-HEAD -->
+
+  <section class="spotlight">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">★ Speler onder de loep ★</span>
+        <h2>Speler in de Kijker</h2>
+        <p>Kies een familielid om hun reis te bekijken — of zet twee naast elkaar voor een onderling duel.</p>
+      </div>
+      <div class="spot-controls">
+        <label>Speler<select id="spot-selA"></select></label>
+        <label>Vergelijk met<select id="spot-selB"><option value="">— niemand —</option></select></label>
+      </div>
+      <div class="spot-card" id="spot-body">
+        <div class="chart-empty"><div class="big">Even geduld…</div></div>
       </div>
     </div>
   </section>
@@ -695,11 +906,294 @@
     });
   }
 
+  /* ============================================================
+     SPICE MODULE — derived stats + visual flourishes.
+     Reuses render() above for the bump chart; powers everything else.
+     ============================================================ */
+
+  function processHistory(history, isDemo){
+    var byDate={};
+    (history.snapshots||[]).forEach(function(s){ if(s && s.date) byDate[s.date]=s; });
+    var dates=Object.keys(byDate).sort();
+    var snaps=dates.map(function(d){ return byDate[d]; });
+    var players={};
+    snaps.forEach(function(s){
+      (s.standings||[]).forEach(function(row){
+        if(!players[row.name]) players[row.name]={ranks:{},points:{}};
+        players[row.name].ranks[s.date]=row.rank;
+        players[row.name].points[s.date]=row.points;
+      });
+    });
+    var names=Object.keys(players);
+    names.forEach(function(n,i){ players[n].color=PALETTE[i%PALETTE.length]; });
+
+    var latest=dates[dates.length-1];
+    var prev=dates.length>1?dates[dates.length-2]:null;
+    var maxRank=1;
+
+    names.forEach(function(n){
+      var p=players[n];
+      p.curRank=p.ranks[latest]; p.curPoints=p.points[latest];
+      p.prevRank=prev?p.ranks[prev]:undefined; p.prevPoints=prev?p.points[prev]:undefined;
+      p.rankDelta=(p.prevRank!=null&&p.curRank!=null)?(p.prevRank-p.curRank):null;
+      p.pointsDelta=(p.prevPoints!=null&&p.curPoints!=null)?(p.curPoints-p.prevPoints):null;
+      var best=Infinity, dtop=0;
+      dates.forEach(function(d){ var rk=p.ranks[d]; if(rk!=null){ if(rk<best)best=rk; if(rk===1)dtop++; if(rk>maxRank)maxRank=rk; } });
+      p.bestRank=isFinite(best)?best:null; p.daysAtTop=dtop;
+      var idxRef=Math.max(0, dates.length-1-3);
+      var rNow=p.ranks[latest], rRef=p.ranks[dates[idxRef]];
+      p.momentum=(rNow!=null&&rRef!=null)?(rRef-rNow):0;
+    });
+
+    var sorted=names.slice().sort(function(a,b){
+      var ra=players[a].curRank, rb=players[b].curRank;
+      if(ra==null) return 1; if(rb==null) return -1; return ra-rb;
+    });
+    var leaderName=sorted[0];
+    var leaderPoints=players[leaderName]?players[leaderName].curPoints:null;
+    names.forEach(function(n){ var p=players[n]; p.gap=(leaderPoints!=null&&p.curPoints!=null)?(leaderPoints-p.curPoints):null; });
+
+    var climber=null, faller=null;
+    if(prev){
+      names.forEach(function(n){
+        var d=players[n].rankDelta;
+        if(d>0 && (!climber || d>players[climber].rankDelta)) climber=n;
+        if(d<0 && (!faller || d<players[faller].rankDelta)) faller=n;
+      });
+    }
+    var leadSeq=dates.map(function(d){
+      var best=null,bestRk=Infinity;
+      names.forEach(function(n){ var rk=players[n].ranks[d]; if(rk!=null&&rk<bestRk){bestRk=rk;best=n;} });
+      return best;
+    });
+    var leadChanges=0;
+    for(var i=1;i<leadSeq.length;i++){ if(leadSeq[i]&&leadSeq[i-1]&&leadSeq[i]!==leadSeq[i-1]) leadChanges++; }
+    var newLeader=(leadSeq.length>1 && leadSeq[leadSeq.length-1] && leadSeq[leadSeq.length-2] && leadSeq[leadSeq.length-1]!==leadSeq[leadSeq.length-2]);
+
+    return {dates:dates,snaps:snaps,players:players,names:names,sorted:sorted,latest:latest,prev:prev,
+      leaderName:leaderName,leaderPoints:leaderPoints,climber:climber,faller:faller,
+      leadChanges:leadChanges,newLeader:newLeader,maxRank:maxRank,isDemo:isDemo};
+  }
+
+  function deltaChipRank(d){
+    if(d==null) return '';
+    if(d>0) return '<span class="chip delta-up">▲ '+d+'</span>';
+    if(d<0) return '<span class="chip delta-down">▼ '+Math.abs(d)+'</span>';
+    return '<span class="chip delta-flat">＝</span>';
+  }
+  function deltaTextRank(rd, pd){
+    var rank;
+    if(rd==null||rd===0) rank='<span class="delta-flat">＝</span>';
+    else if(rd>0) rank='<span class="delta-up">▲'+rd+'</span>';
+    else rank='<span class="delta-down">▼'+Math.abs(rd)+'</span>';
+    var pts=(pd!=null&&pd>0)?(' <span style="opacity:.65">(+'+pd+')</span>'):'';
+    return rank+pts;
+  }
+  function formArrows(mom){
+    if(mom==null||mom===0) return '<span class="delta-flat">▬</span>';
+    var n=Math.min(3,Math.abs(mom)), ch=mom>0?'▲':'▼', cls=mom>0?'delta-up':'delta-down', s='';
+    for(var i=0;i<n;i++) s+=ch;
+    return '<span class="'+cls+'">'+s+'</span>';
+  }
+  function statBox(v,k){ return '<div class="spot-stat"><div class="v'+(String(v).length>4?' small':'')+'">'+v+'</div><div class="k">'+k+'</div></div>'; }
+
+  function animateCountups(scope){
+    [].slice.call((scope||document).querySelectorAll('.countup')).forEach(function(el){
+      var to=parseFloat(el.getAttribute('data-to'))||0, start=null, dur=900;
+      function step(ts){ if(!start)start=ts; var t=Math.min(1,(ts-start)/dur);
+        el.textContent=Math.round(to*(0.5-0.5*Math.cos(Math.PI*t)));
+        if(t<1) requestAnimationFrame(step); else el.textContent=to; }
+      requestAnimationFrame(step);
+    });
+  }
+
+  function renderPodium(m){
+    var stage=document.getElementById('podium-stage'), ribbon=document.getElementById('new-leader-ribbon');
+    var top=m.sorted.slice(0,3).filter(function(n){ return m.players[n].curRank!=null; });
+    if(top.length===0){ stage.innerHTML='<div class="chart-empty"><div class="big">Nog geen stand</div></div>'; return; }
+    var medals=['🥇','🥈','🥉'], classes=['pod-1','pod-2','pod-3'], html='';
+    top.forEach(function(n,i){
+      var p=m.players[n];
+      html+='<div class="pod '+classes[i]+'">'+
+        (i===0?'<span class="crown">👑</span>':'')+
+        '<div class="medal">'+medals[i]+'</div>'+
+        '<div class="who">'+esc(n)+'</div>'+
+        '<div class="pts"><span class="countup" data-to="'+(p.curPoints||0)+'">0</span> ptn</div>'+
+        deltaChipRank(p.rankDelta)+
+        '<div class="block">'+p.curRank+'</div></div>';
+    });
+    stage.innerHTML=html;
+    if(m.newLeader){ ribbon.style.display='block'; ribbon.textContent='👑 Nieuwe koploper: '+m.leaderName+'!'; }
+    else { ribbon.style.display='none'; }
+    animateCountups(stage);
+  }
+
+  function renderMovers(m){
+    var box=document.getElementById('movers'), stat=document.getElementById('leadstat');
+    if(!m.prev){
+      box.innerHTML='<div class="mover" style="grid-column:1/-1;justify-content:center;text-align:center;box-shadow:6px 6px 0 var(--gold)"><div><div class="lbl">Stijgers &amp; dalers</div><div class="nm" style="font-size:1rem">Beschikbaar na de volgende dagupdate</div></div></div>';
+    } else {
+      var html='';
+      if(m.climber){ var c=m.players[m.climber]; html+='<div class="mover"><span class="emoji">🔥</span><div><div class="lbl">Stijger van de dag</div><div class="nm">'+esc(m.climber)+'</div><div class="mv delta-up">▲ '+c.rankDelta+' plek'+(c.rankDelta>1?'ken':'')+'</div></div></div>'; }
+      else { html+='<div class="mover"><span class="emoji">🔥</span><div><div class="lbl">Stijger van de dag</div><div class="nm" style="font-size:1rem">Niemand klom vandaag</div></div></div>'; }
+      if(m.faller){ var f=m.players[m.faller], fd=Math.abs(f.rankDelta); html+='<div class="mover fall"><span class="emoji">🧊</span><div><div class="lbl">Daler van de dag</div><div class="nm">'+esc(m.faller)+'</div><div class="mv delta-down">▼ '+fd+' plek'+(fd>1?'ken':'')+'</div></div></div>'; }
+      else { html+='<div class="mover fall"><span class="emoji">🧊</span><div><div class="lbl">Daler van de dag</div><div class="nm" style="font-size:1rem">Niemand zakte vandaag</div></div></div>'; }
+      box.innerHTML=html;
+    }
+    var parts=[];
+    parts.push('📅 <b>'+m.dates.length+'</b> '+(m.dates.length===1?'dag':'dagen')+' vastgelegd');
+    if(m.dates.length>1) parts.push('🔁 <b>'+m.leadChanges+'</b>× van koppositie gewisseld');
+    if(m.leaderName) parts.push('👑 Koploper: <b>'+esc(m.leaderName)+'</b>');
+    stat.innerHTML=parts.map(function(p){ return '<span>'+p+'</span>'; }).join('');
+  }
+
+  function renderStats(m){
+    var board=document.getElementById('statsboard'), tag=document.getElementById('stats-tag');
+    tag.textContent=m.dates.length+(m.dates.length===1?' dag':' dagen');
+    var showMove=!!m.prev;
+    var rows=m.sorted.map(function(n){
+      var p=m.players[n];
+      var gap=(p.gap==null||p.gap===0)?'—':('-'+p.gap);
+      var today=showMove?deltaTextRank(p.rankDelta,p.pointsDelta):'—';
+      var form=showMove?formArrows(p.momentum):'—';
+      var crown=(p.curRank===1)?'<span class="crown">👑</span>':'';
+      return '<tr><td class="rk">'+(p.curRank!=null?p.curRank:'–')+'</td>'+
+        '<td><span class="nm"><span class="sw" style="background:'+p.color+'"></span>'+esc(n)+crown+'</span></td>'+
+        '<td class="pts">'+(p.curPoints!=null?p.curPoints:'–')+'</td>'+
+        '<td class="pts delta-down">'+gap+'</td>'+
+        '<td>'+today+'</td><td class="form-arrows">'+form+'</td>'+
+        '<td class="pts">'+(p.daysAtTop||0)+'</td></tr>';
+    }).join('');
+    board.innerHTML='<table class="stats"><thead><tr><th>#</th><th>Speler</th><th>Punten</th><th>Achterstand</th><th>Vandaag</th><th>Vorm</th><th>Dagen #1</th></tr></thead><tbody>'+rows+'</tbody></table>';
+  }
+
+  function renderPointsPerDay(m){
+    var wrap=document.getElementById('ppd-wrap'), note=document.getElementById('ppd-note'), tag=document.getElementById('ppd-tag');
+    var useDelta=!!m.prev;
+    tag.textContent=useDelta?('sinds '+fmtDate(m.prev)):'totaal';
+    var arr=m.names.map(function(n){ var p=m.players[n];
+      var val=useDelta?(p.pointsDelta!=null?p.pointsDelta:0):(p.curPoints!=null?p.curPoints:0);
+      return {name:n,val:val,color:p.color}; });
+    arr.sort(function(a,b){ return b.val-a.val; });
+    var max=arr.reduce(function(mx,x){ return Math.max(mx,x.val); },1);
+    wrap.innerHTML=arr.map(function(x){
+      var pct=Math.max(0,(x.val/max)*100), zero=x.val<=0;
+      var bar=zero
+        ? '<div class="ppd-track"></div><span style="font-weight:800;color:var(--green-deep);font-size:.8rem;flex:none">'+(useDelta?'+0':x.val)+'</span>'
+        : '<div class="ppd-track"><div class="ppd-fill" data-pct="'+pct.toFixed(1)+'" style="background:'+x.color+'">'+(useDelta?('+'+x.val):x.val)+'</div></div>';
+      return '<div class="ppd-row"><div class="ppd-name">'+esc(x.name)+'</div>'+bar+'</div>';
+    }).join('')||'<div class="chart-empty"><div class="big">Geen data</div></div>';
+    note.textContent=useDelta
+      ? ('Punten verzameld sinds de vorige update ('+fmtDate(m.prev)+' → '+fmtDate(m.latest)+').')
+      : 'Totaalstand — dagscores verschijnen zodra er een tweede dag is vastgelegd.';
+    requestAnimationFrame(function(){
+      [].slice.call(wrap.querySelectorAll('.ppd-fill')).forEach(function(el){ el.style.width=(el.getAttribute('data-pct')||0)+'%'; });
+    });
+  }
+
+  function rankSpark(m, series){
+    var dates=m.dates; if(dates.length===0) return '';
+    var W=600,H=160,mL=24,mR=14,mT=14,mB=10, plotW=W-mL-mR, plotH=H-mT-mB, maxR=m.maxRank;
+    function xAt(i){ return dates.length<=1?(mL+plotW/2):(mL+plotW*i/(dates.length-1)); }
+    function yAt(r){ return maxR<=1?(mT+plotH/2):(mT+plotH*(r-1)/(maxR-1)); }
+    var svg='<svg class="spot-spark" viewBox="0 0 '+W+' '+H+'" xmlns="http://www.w3.org/2000/svg">';
+    for(var r=1;r<=maxR;r++){ var gy=yAt(r);
+      svg+='<line x1="'+mL+'" y1="'+gy+'" x2="'+(W-mR)+'" y2="'+gy+'" stroke="rgba(20,40,28,.08)"/>';
+      svg+='<text x="'+(mL-6)+'" y="'+(gy+4)+'" text-anchor="end" font-size="10" fill="rgba(20,40,28,.4)" font-weight="700">'+r+'</text>'; }
+    series.forEach(function(s){
+      var p=m.players[s.name], pts=[];
+      dates.forEach(function(d,i){ if(p.ranks[d]!=null) pts.push([xAt(i),yAt(p.ranks[d])]); });
+      if(pts.length>1){ var dd='M '+pts[0][0]+' '+pts[0][1]; for(var k=1;k<pts.length;k++) dd+=' L '+pts[k][0]+' '+pts[k][1];
+        svg+='<path d="'+dd+'" fill="none" stroke="'+s.color+'" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>'; }
+      pts.forEach(function(pt){ svg+='<circle cx="'+pt[0]+'" cy="'+pt[1]+'" r="4.2" fill="'+s.color+'" stroke="#F4E8D0" stroke-width="2"/>'; });
+    });
+    return svg+'</svg>';
+  }
+
+  function soloCard(m,name){
+    var p=m.players[name]; if(!p) return '';
+    var grid='<div class="spot-grid">'+
+      statBox(p.curRank!=null?('#'+p.curRank):'–','Huidige plek')+
+      statBox(p.bestRank!=null?('#'+p.bestRank):'–','Beste plek')+
+      statBox(p.curPoints!=null?p.curPoints:'–','Punten')+
+      statBox(p.daysAtTop||0,'Dagen #1')+'</div>';
+    return grid+rankSpark(m,[{name:name,color:p.color}])+
+      '<div class="chart-note" style="padding-bottom:0">Rangverloop van '+esc(name)+' door het toernooi heen.</div>';
+  }
+
+  function h2h(m,a,b){
+    var pa=m.players[a], pb=m.players[b], verdict;
+    if(pa.curRank!=null&&pb.curRank!=null){
+      if(pa.curRank<pb.curRank) verdict=esc(a)+' ligt voor op '+esc(b);
+      else if(pb.curRank<pa.curRank) verdict=esc(b)+' ligt voor op '+esc(a);
+      else verdict='Het is gelijkspel!';
+    } else verdict='Onderling duel';
+    var gap=(pa.curPoints!=null&&pb.curPoints!=null)?Math.abs(pa.curPoints-pb.curPoints):null;
+    var sub=(gap!=null&&gap>0)?('<div class="chart-note" style="padding-top:0">Verschil: '+gap+' punten.</div>'):'';
+    var grid='<div class="spot-grid">'+
+      statBox(pa.curRank!=null?('#'+pa.curRank):'–',esc(a)+' plek')+
+      statBox(pb.curRank!=null?('#'+pb.curRank):'–',esc(b)+' plek')+
+      statBox(pa.curPoints!=null?pa.curPoints:'–',esc(a)+' ptn')+
+      statBox(pb.curPoints!=null?pb.curPoints:'–',esc(b)+' ptn')+'</div>';
+    var legend='<div class="spot-h2h-legend"><span><span class="sw" style="background:'+pa.color+'"></span>'+esc(a)+'</span><span><span class="sw" style="background:'+pb.color+'"></span>'+esc(b)+'</span></div>';
+    return '<div class="spot-verdict">⚔️ '+verdict+'</div>'+sub+grid+rankSpark(m,[{name:a,color:pa.color},{name:b,color:pb.color}])+legend;
+  }
+
+  function renderSpotlight(m){
+    var selA=document.getElementById('spot-selA'), selB=document.getElementById('spot-selB'), body=document.getElementById('spot-body');
+    var optsA=m.sorted.map(function(n){ return '<option value="'+esc(n)+'">'+esc(n)+'</option>'; }).join('');
+    selA.innerHTML=optsA;
+    selB.innerHTML='<option value="">— niemand —</option>'+optsA;
+    selA.value=m.leaderName||m.sorted[0];
+    function draw(){
+      var a=selA.value, b=selB.value;
+      if(b && b===a){ b=''; selB.value=''; }
+      body.innerHTML=b?h2h(m,a,b):soloCard(m,a);
+    }
+    selA.onchange=draw; selB.onchange=draw;
+    draw();
+  }
+
+  function confettiBurst(power){
+    var canvas=document.getElementById('confetti'); if(!canvas||!canvas.getContext) return;
+    var ctx=canvas.getContext('2d');
+    canvas.width=window.innerWidth; canvas.height=window.innerHeight;
+    var colors=['#E45726','#1F5A35','#C9962B','#E0B548','#2A6F86','#F4E8D0'];
+    var parts=[]; for(var i=0;i<(power||100);i++){ parts.push({
+      x:Math.random()*canvas.width, y:-20-Math.random()*canvas.height*0.3,
+      r:5+Math.random()*7, c:colors[(Math.random()*colors.length)|0],
+      vx:(Math.random()-0.5)*3, vy:2+Math.random()*4, rot:Math.random()*6.28, vr:(Math.random()-0.5)*0.3 }); }
+    var start=null, life=3200;
+    function frame(ts){ if(!start)start=ts; var t=ts-start;
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      parts.forEach(function(p){ p.x+=p.vx; p.y+=p.vy; p.vy+=0.04; p.rot+=p.vr;
+        ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.rot); ctx.globalAlpha=Math.max(0,1-t/life);
+        ctx.fillStyle=p.c; ctx.fillRect(-p.r/2,-p.r/2,p.r,p.r*0.6); ctx.restore(); });
+      if(t<life) requestAnimationFrame(frame); else ctx.clearRect(0,0,canvas.width,canvas.height);
+    }
+    requestAnimationFrame(frame);
+  }
+
+  function renderAll(history, isDemo){
+    try { render(history, isDemo); } catch(e){}
+    var m=processHistory(history, isDemo);
+    if(m.names.length===0){
+      ['podium-stage','movers','statsboard','ppd-wrap','spot-body'].forEach(function(id){
+        var el=document.getElementById(id);
+        if(el) el.innerHTML='<div class="chart-empty"><div class="big">Nog geen gegevens</div><div>Alles vult zich zodra de eerste dagstand is vastgelegd.</div></div>';
+      });
+      return;
+    }
+    renderPodium(m); renderMovers(m); renderStats(m); renderPointsPerDay(m); renderSpotlight(m);
+    setTimeout(function(){ confettiBurst(m.newLeader?180:90); }, 450);
+  }
+
   fetch('./standings-history.json', { cache:'no-store' })
     .then(function(r){ if(!r.ok) throw new Error('no file'); return r.json(); })
-    .then(function(data){ render(data, false); })
-    .catch(function(){ render(SAMPLE, true); });
+    .then(function(data){ renderAll(data, false); })
+    .catch(function(){ renderAll(SAMPLE, true); });
 })();
 </script>
+
 </body>
 </html>
