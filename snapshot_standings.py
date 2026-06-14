@@ -189,6 +189,20 @@ def main():
     today = now.strftime("%Y-%m-%d")
 
     history = load_history(OUT_FILE)
+
+    # Change-detection: if today's standings already match what we stored,
+    # do nothing and write nothing — so the workflow commits only on a real
+    # change. This is what makes frequent polling cheap and noise-free.
+    def _norm(rows):
+        return [(r.get("rank"), r.get("name"), r.get("points")) for r in (rows or [])]
+
+    prev_today = next((s for s in history.get("snapshots", [])
+                       if s.get("date") == today), None)
+    if prev_today is not None and _norm(prev_today.get("standings")) == _norm(standings):
+        print(f"[skip] {today}: standings unchanged "
+              f"({len(standings)} players) — nothing to commit.")
+        return
+
     history["pool"] = POOL_ID
     history["updated"] = now.isoformat(timespec="seconds")
 
@@ -204,7 +218,8 @@ def main():
     with open(OUT_FILE, "w", encoding="utf-8") as f:
         json.dump(history, f, ensure_ascii=False, indent=2)
 
-    print(f"[ok] {today}: captured {len(standings)} players "
+    change = "new day" if prev_today is None else "standings changed"
+    print(f"[ok] {today}: {change} — {len(standings)} players "
           f"(leader: {standings[0]['name']}). Total snapshots: {len(snaps)}.")
 
 
