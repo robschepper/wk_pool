@@ -991,7 +991,7 @@
 
     return {dates:dates,snaps:snaps,players:players,names:names,sorted:sorted,latest:latest,prev:prev,
       leaderName:leaderName,leaderPoints:leaderPoints,climber:climber,faller:faller,
-      leadChanges:leadChanges,newLeader:newLeader,maxRank:maxRank,isDemo:isDemo};
+      leadChanges:leadChanges,newLeader:newLeader,maxRank:maxRank,isDemo:isDemo,updated:(history&&history.updated)||null};
   }
 
   function deltaChipRank(d){
@@ -1064,6 +1064,7 @@
     parts.push('📅 <b>'+m.dates.length+'</b> '+(m.dates.length===1?'dag':'dagen')+' vastgelegd');
     if(m.dates.length>1) parts.push('🔁 <b>'+m.leadChanges+'</b>× van koppositie gewisseld');
     if(m.leaderName) parts.push('👑 Koploper: <b>'+esc(m.leaderName)+'</b>');
+    if(m.updated){ var u=String(m.updated).split('T'); parts.push('🕑 Bijgewerkt: <b>'+fmtDate(u[0])+(u[1]?(', '+u[1].slice(0,5)):'')+'</b>'); }
     stat.innerHTML=parts.map(function(p){ return '<span>'+p+'</span>'; }).join('');
   }
 
