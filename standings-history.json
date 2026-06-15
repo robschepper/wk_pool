@@ -1,6 +1,6 @@
 {
   "pool": "127",
-  "updated": "2026-06-15T00:44:51+02:00",
+  "updated": "2026-06-15T07:21:16+02:00",
   "snapshots": [
     {
       "date": "2026-06-13",
@@ -226,112 +226,112 @@
     },
     {
       "date": "2026-06-15",
-      "captured_at": "2026-06-15T00:44:51+02:00",
+      "captured_at": "2026-06-15T07:21:16+02:00",
       "standings": [
         {
           "rank": 1,
           "name": "Spekkieee",
-          "points": 910
+          "points": 1005
         },
         {
           "rank": 2,
           "name": "Enrico7",
-          "points": 905
+          "points": 945
         },
         {
           "rank": 3,
           "name": "Pinball-Soccer",
-          "points": 820
+          "points": 895
         },
         {
           "rank": 4,
           "name": "Leeuw-oranje",
-          "points": 790
+          "points": 885
         },
         {
           "rank": 5,
           "name": "Oma_honing",
-          "points": 685
+          "points": 800
         },
         {
           "rank": 6,
-          "name": "Roosie",
-          "points": 670
+          "name": "Opahoning",
+          "points": 780
         },
         {
           "rank": 7,
           "name": "Matje123",
-          "points": 665
+          "points": 760
         },
         {
           "rank": 8,
-          "name": "Opahoning",
-          "points": 630
+          "name": "FleurKoets",
+          "points": 715
         },
         {
           "rank": 9,
-          "name": "FleurKoets",
-          "points": 620
+          "name": "Roosie",
+          "points": 690
         },
         {
           "rank": 10,
           "name": "RecentHuisBezitter",
-          "points": 600
+          "points": 675
         },
         {
           "rank": 11,
           "name": "Balconnie",
-          "points": 555
+          "points": 670
         },
         {
           "rank": 12,
-          "name": "DeBruyneKroket (beheerder)",
-          "points": 545
+          "name": "timmeke1",
+          "points": 640
         },
         {
-          "rank": 13,
-          "name": "timmeke1",
-          "points": 545
+          "rank": 12,
+          "name": "JeroenO95",
+          "points": 640
         },
         {
           "rank": 14,
-          "name": "JeroenO95",
-          "points": 545
+          "name": "PinotPenalty",
+          "points": 620
         },
         {
           "rank": 15,
-          "name": "PinotPenalty",
-          "points": 525
+          "name": "Buurman-en-buurman",
+          "points": 605
         },
         {
           "rank": 16,
           "name": "SanderPostma",
-          "points": 525
+          "points": 600
         },
         {
           "rank": 17,
-          "name": "Buurman-en-buurman",
-          "points": 490
+          "name": "DeBruyneKroket (beheerder)",
+          "points": 585
         },
         {
           "rank": 18,
-          "name": "Wingri",
-          "points": 425
+          "name": "Momma",
+          "points": 575
         },
         {
           "rank": 19,
-          "name": "Momma",
-          "points": 385
+          "name": "Wingri",
+          "points": 500
         },
         {
           "rank": 20,
-          "name": "Ellisvs",
-          "points": 355
+          "name": "Nadiaatje",
+          "points": 485
         },
         {
           "rank": 21,
-          "name": "Nadiaatje",
-          "points": 315
+          "name": "Ellisvs",
+          "points": 470
         }
       ]
     }
