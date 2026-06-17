@@ -1,6 +1,6 @@
 {
   "pool": "127",
-  "updated": "2026-06-17T12:06:38+02:00",
+  "updated": "2026-06-17T21:38:33+02:00",
   "snapshots": [
     {
       "date": "2026-06-13",
@@ -448,17 +448,17 @@
     },
     {
       "date": "2026-06-17",
-      "captured_at": "2026-06-17T12:06:38+02:00",
+      "captured_at": "2026-06-17T21:38:33+02:00",
       "standings": [
         {
           "rank": 1,
-          "name": "Pinball-Soccer",
-          "points": 1525
+          "name": "Oma_honing",
+          "points": 1705
         },
         {
           "rank": 2,
-          "name": "Oma_honing",
-          "points": 1505
+          "name": "Pinball-Soccer",
+          "points": 1525
         },
         {
           "rank": 3,
@@ -497,13 +497,13 @@
         },
         {
           "rank": 10,
-          "name": "RecentHuisBezitter",
-          "points": 1180
+          "name": "Momma",
+          "points": 1195
         },
         {
           "rank": 11,
-          "name": "Momma",
-          "points": 1175
+          "name": "RecentHuisBezitter",
+          "points": 1180
         },
         {
           "rank": 12,
@@ -513,7 +513,7 @@
         {
           "rank": 13,
           "name": "Balconnie",
-          "points": 1095
+          "points": 1115
         },
         {
           "rank": 14,
@@ -523,7 +523,7 @@
         {
           "rank": 15,
           "name": "Buurman-en-buurman",
-          "points": 1065
+          "points": 1085
         },
         {
           "rank": 16,
@@ -538,7 +538,7 @@
         {
           "rank": 18,
           "name": "Wingri",
-          "points": 1025
+          "points": 1045
         },
         {
           "rank": 19,
@@ -553,7 +553,7 @@
         {
           "rank": 21,
           "name": "Nadiaatje",
-          "points": 925
+          "points": 945
         }
       ]
     }
