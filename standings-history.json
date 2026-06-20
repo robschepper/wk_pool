@@ -1,6 +1,6 @@
 {
   "pool": "127",
-  "updated": "2026-06-20T21:48:21+02:00",
+  "updated": "2026-06-21T00:45:11+02:00",
   "snapshots": [
     {
       "date": "2026-06-13",
@@ -887,6 +887,117 @@
           "rank": 21,
           "name": "Leeuw-oranje",
           "points": 1740
+        }
+      ]
+    },
+    {
+      "date": "2026-06-21",
+      "captured_at": "2026-06-21T00:45:11+02:00",
+      "standings": [
+        {
+          "rank": 1,
+          "name": "Pinball-Soccer",
+          "points": 2495
+        },
+        {
+          "rank": 2,
+          "name": "FleurKoets",
+          "points": 2455
+        },
+        {
+          "rank": 3,
+          "name": "JeroenO95",
+          "points": 2385
+        },
+        {
+          "rank": 4,
+          "name": "Oma_honing",
+          "points": 2380
+        },
+        {
+          "rank": 5,
+          "name": "Enrico7",
+          "points": 2325
+        },
+        {
+          "rank": 6,
+          "name": "Spekkieee",
+          "points": 2255
+        },
+        {
+          "rank": 7,
+          "name": "SanderPostma",
+          "points": 2250
+        },
+        {
+          "rank": 8,
+          "name": "Matje123",
+          "points": 2240
+        },
+        {
+          "rank": 9,
+          "name": "Buurman-en-buurman",
+          "points": 2215
+        },
+        {
+          "rank": 10,
+          "name": "Opahoning",
+          "points": 2200
+        },
+        {
+          "rank": 11,
+          "name": "Nadiaatje",
+          "points": 2140
+        },
+        {
+          "rank": 12,
+          "name": "DeBruyneKroket (beheerder)",
+          "points": 2135
+        },
+        {
+          "rank": 13,
+          "name": "Ellisvs",
+          "points": 2105
+        },
+        {
+          "rank": 14,
+          "name": "Wingri",
+          "points": 2105
+        },
+        {
+          "rank": 15,
+          "name": "Balconnie",
+          "points": 2035
+        },
+        {
+          "rank": 16,
+          "name": "RecentHuisBezitter",
+          "points": 1950
+        },
+        {
+          "rank": 17,
+          "name": "timmeke1",
+          "points": 1920
+        },
+        {
+          "rank": 18,
+          "name": "PinotPenalty",
+          "points": 1910
+        },
+        {
+          "rank": 19,
+          "name": "Momma",
+          "points": 1895
+        },
+        {
+          "rank": 20,
+          "name": "Roosie",
+          "points": 1865
+        },
+        {
+          "rank": 21,
+          "name": "Leeuw-oranje",
+          "points": 1815
         }
       ]
     }
