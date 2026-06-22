@@ -1,6 +1,6 @@
 {
   "pool": "127",
-  "updated": "2026-06-22T00:53:13+02:00",
+  "updated": "2026-06-22T08:07:48+02:00",
   "snapshots": [
     {
       "date": "2026-06-13",
@@ -1003,112 +1003,112 @@
     },
     {
       "date": "2026-06-22",
-      "captured_at": "2026-06-22T00:53:13+02:00",
+      "captured_at": "2026-06-22T08:07:48+02:00",
       "standings": [
         {
           "rank": 1,
           "name": "FleurKoets",
-          "points": 2665
+          "points": 2760
         },
         {
           "rank": 2,
           "name": "Pinball-Soccer",
-          "points": 2645
+          "points": 2740
         },
         {
           "rank": 3,
           "name": "JeroenO95",
-          "points": 2595
+          "points": 2670
         },
         {
           "rank": 4,
           "name": "Enrico7",
-          "points": 2535
+          "points": 2650
         },
         {
           "rank": 5,
+          "name": "SanderPostma",
+          "points": 2555
+        },
+        {
+          "rank": 6,
           "name": "Oma_honing",
           "points": 2515
         },
         {
-          "rank": 6,
-          "name": "SanderPostma",
-          "points": 2480
-        },
-        {
           "rank": 7,
-          "name": "Spekkieee",
-          "points": 2445
+          "name": "Buurman-en-buurman",
+          "points": 2485
         },
         {
           "rank": 8,
-          "name": "Buurman-en-buurman",
-          "points": 2445
+          "name": "Spekkieee",
+          "points": 2465
         },
         {
           "rank": 9,
+          "name": "Matje123",
+          "points": 2450
+        },
+        {
+          "rank": 10,
+          "name": "DeBruyneKroket (beheerder)",
+          "points": 2440
+        },
+        {
+          "rank": 11,
           "name": "Nadiaatje",
           "points": 2370
         },
         {
-          "rank": 10,
-          "name": "Matje123",
+          "rank": 12,
+          "name": "Wingri",
           "points": 2355
         },
         {
-          "rank": 11,
-          "name": "DeBruyneKroket (beheerder)",
-          "points": 2325
-        },
-        {
-          "rank": 12,
-          "name": "Ellisvs",
-          "points": 2320
-        },
-        {
           "rank": 13,
-          "name": "Opahoning",
-          "points": 2315
+          "name": "Ellisvs",
+          "points": 2340
         },
         {
           "rank": 14,
-          "name": "Wingri",
-          "points": 2315
+          "name": "Opahoning",
+          "points": 2335
         },
         {
           "rank": 15,
           "name": "Roosie",
-          "points": 2275
+          "points": 2315
         },
         {
           "rank": 16,
-          "name": "Balconnie",
-          "points": 2205
+          "name": "Momma",
+          "points": 2285
         },
         {
           "rank": 17,
-          "name": "RecentHuisBezitter",
-          "points": 2180
+          "name": "Balconnie",
+          "points": 2225
         },
         {
           "rank": 18,
           "name": "PinotPenalty",
-          "points": 2120
+          "points": 2220
         },
         {
           "rank": 19,
-          "name": "Leeuw-oranje",
-          "points": 2105
+          "name": "RecentHuisBezitter",
+          "points": 2200
         },
         {
           "rank": 20,
-          "name": "Momma",
-          "points": 2085
+          "name": "Leeuw-oranje",
+          "points": 2125
         },
         {
           "rank": 21,
           "name": "timmeke1",
-          "points": 2055
+          "points": 2095
         }
       ]
     }
