@@ -1,6 +1,6 @@
 {
   "pool": "127",
-  "updated": "2026-06-26T06:22:45+02:00",
+  "updated": "2026-06-26T10:09:25+02:00",
   "snapshots": [
     {
       "date": "2026-06-13",
@@ -1447,20 +1447,20 @@
     },
     {
       "date": "2026-06-26",
-      "captured_at": "2026-06-26T06:22:45+02:00",
+      "captured_at": "2026-06-26T10:09:25+02:00",
       "standings": [
         {
           "rank": 1,
-          "name": "Ellisvs",
-          "points": 3920
-        },
-        {
-          "rank": 2,
           "name": "JeroenO95",
           "points": 4230
         },
         {
-          "rank": 3,
+          "rank": 2,
+          "name": "DeBruyneKroket (beheerder)",
+          "points": 4175
+        },
+        {
+          "rank": 2,
           "name": "Enrico7",
           "points": 4175
         },
@@ -1470,9 +1470,9 @@
           "points": 4140
         },
         {
-          "rank": 4,
-          "name": "FleurKoets",
-          "points": 4015
+          "rank": 5,
+          "name": "Matje123",
+          "points": 4130
         },
         {
           "rank": 6,
@@ -1481,8 +1481,8 @@
         },
         {
           "rank": 7,
-          "name": "Matje123",
-          "points": 4130
+          "name": "FleurKoets",
+          "points": 4015
         },
         {
           "rank": 8,
@@ -1491,8 +1491,8 @@
         },
         {
           "rank": 9,
-          "name": "DeBruyneKroket (beheerder)",
-          "points": 4175
+          "name": "Ellisvs",
+          "points": 3920
         },
         {
           "rank": 10,
@@ -1501,13 +1501,13 @@
         },
         {
           "rank": 11,
-          "name": "Wingri",
-          "points": 3550
+          "name": "timmeke1",
+          "points": 3735
         },
         {
           "rank": 12,
-          "name": "Oma_honing",
-          "points": 3545
+          "name": "Balconnie",
+          "points": 3700
         },
         {
           "rank": 13,
@@ -1521,33 +1521,33 @@
         },
         {
           "rank": 15,
-          "name": "PinotPenalty",
-          "points": 3405
-        },
-        {
-          "rank": 16,
-          "name": "Leeuw-oranje",
-          "points": 3340
-        },
-        {
-          "rank": 17,
-          "name": "Roosie",
-          "points": 3470
-        },
-        {
-          "rank": 18,
           "name": "Momma",
           "points": 3555
         },
         {
+          "rank": 16,
+          "name": "Wingri",
+          "points": 3550
+        },
+        {
+          "rank": 17,
+          "name": "Oma_honing",
+          "points": 3545
+        },
+        {
+          "rank": 18,
+          "name": "Roosie",
+          "points": 3470
+        },
+        {
           "rank": 19,
-          "name": "Balconnie",
-          "points": 3700
+          "name": "PinotPenalty",
+          "points": 3405
         },
         {
           "rank": 20,
-          "name": "timmeke1",
-          "points": 3735
+          "name": "Leeuw-oranje",
+          "points": 3340
         },
         {
           "rank": 21,
