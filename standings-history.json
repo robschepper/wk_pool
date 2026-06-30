@@ -1,6 +1,6 @@
 {
   "pool": "127",
-  "updated": "2026-06-30T01:08:02+02:00",
+  "updated": "2026-06-30T03:26:17+02:00",
   "snapshots": [
     {
       "date": "2026-06-13",
@@ -1891,7 +1891,7 @@
     },
     {
       "date": "2026-06-30",
-      "captured_at": "2026-06-30T01:08:02+02:00",
+      "captured_at": "2026-06-30T03:26:17+02:00",
       "standings": [
         {
           "rank": 1,
@@ -1901,7 +1901,7 @@
         {
           "rank": 2,
           "name": "Matje123",
-          "points": 5350
+          "points": 5370
         },
         {
           "rank": 3,
@@ -1921,7 +1921,7 @@
         {
           "rank": 6,
           "name": "Buurman-en-buurman",
-          "points": 5155
+          "points": 5175
         },
         {
           "rank": 7,
@@ -1930,13 +1930,13 @@
         },
         {
           "rank": 8,
-          "name": "SanderPostma",
+          "name": "Enrico7",
           "points": 5115
         },
         {
           "rank": 9,
-          "name": "Enrico7",
-          "points": 5095
+          "name": "SanderPostma",
+          "points": 5115
         },
         {
           "rank": 10,
@@ -1946,27 +1946,27 @@
         {
           "rank": 11,
           "name": "Ellisvs",
-          "points": 4985
+          "points": 5005
         },
         {
           "rank": 12,
           "name": "Balconnie",
-          "points": 4870
+          "points": 4890
         },
         {
           "rank": 13,
           "name": "Opahoning",
-          "points": 4850
+          "points": 4870
         },
         {
           "rank": 14,
           "name": "Wingri",
-          "points": 4610
+          "points": 4810
         },
         {
           "rank": 15,
           "name": "Oma_honing",
-          "points": 4475
+          "points": 4675
         },
         {
           "rank": 16,
@@ -1986,7 +1986,7 @@
         {
           "rank": 19,
           "name": "Nadiaatje",
-          "points": 4310
+          "points": 4330
         },
         {
           "rank": 20,
