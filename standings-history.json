@@ -1,6 +1,6 @@
 {
   "pool": "127",
-  "updated": "2026-07-14T23:11:00+02:00",
+  "updated": "2026-07-15T00:15:07+02:00",
   "snapshots": [
     {
       "date": "2026-06-13",
@@ -3446,6 +3446,117 @@
     {
       "date": "2026-07-14",
       "captured_at": "2026-07-14T23:11:00+02:00",
+      "standings": [
+        {
+          "rank": 1,
+          "name": "DeBruyneKroket (beheerder)",
+          "points": 7855
+        },
+        {
+          "rank": 2,
+          "name": "Spekkieee",
+          "points": 7720
+        },
+        {
+          "rank": 3,
+          "name": "Matje123",
+          "points": 7600
+        },
+        {
+          "rank": 4,
+          "name": "JeroenO95",
+          "points": 7360
+        },
+        {
+          "rank": 5,
+          "name": "FleurKoets",
+          "points": 7290
+        },
+        {
+          "rank": 6,
+          "name": "SanderPostma",
+          "points": 7080
+        },
+        {
+          "rank": 7,
+          "name": "Enrico7",
+          "points": 7040
+        },
+        {
+          "rank": 8,
+          "name": "Buurman-en-buurman",
+          "points": 7035
+        },
+        {
+          "rank": 9,
+          "name": "Pinball-Soccer",
+          "points": 6995
+        },
+        {
+          "rank": 10,
+          "name": "Ellisvs",
+          "points": 6970
+        },
+        {
+          "rank": 11,
+          "name": "timmeke1",
+          "points": 6935
+        },
+        {
+          "rank": 12,
+          "name": "Leeuw-oranje",
+          "points": 6745
+        },
+        {
+          "rank": 13,
+          "name": "Balconnie",
+          "points": 6730
+        },
+        {
+          "rank": 14,
+          "name": "Wingri",
+          "points": 6655
+        },
+        {
+          "rank": 15,
+          "name": "Roosie",
+          "points": 6440
+        },
+        {
+          "rank": 16,
+          "name": "Nadiaatje",
+          "points": 6210
+        },
+        {
+          "rank": 17,
+          "name": "Momma",
+          "points": 6180
+        },
+        {
+          "rank": 18,
+          "name": "RecentHuisBezitter",
+          "points": 6120
+        },
+        {
+          "rank": 19,
+          "name": "Opahoning",
+          "points": 6110
+        },
+        {
+          "rank": 20,
+          "name": "Oma_honing",
+          "points": 6105
+        },
+        {
+          "rank": 21,
+          "name": "PinotPenalty",
+          "points": 5455
+        }
+      ]
+    },
+    {
+      "date": "2026-07-15",
+      "captured_at": "2026-07-15T00:15:07+02:00",
       "standings": [
         {
           "rank": 1,
