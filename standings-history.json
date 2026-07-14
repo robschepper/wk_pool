@@ -1,6 +1,6 @@
 {
   "pool": "127",
-  "updated": "2026-07-14T00:12:42+02:00",
+  "updated": "2026-07-14T23:11:00+02:00",
   "snapshots": [
     {
       "date": "2026-06-13",
@@ -3445,7 +3445,7 @@
     },
     {
       "date": "2026-07-14",
-      "captured_at": "2026-07-14T00:12:42+02:00",
+      "captured_at": "2026-07-14T23:11:00+02:00",
       "standings": [
         {
           "rank": 1,
@@ -3455,12 +3455,12 @@
         {
           "rank": 2,
           "name": "Spekkieee",
-          "points": 7700
+          "points": 7720
         },
         {
           "rank": 3,
           "name": "Matje123",
-          "points": 7400
+          "points": 7600
         },
         {
           "rank": 4,
@@ -3495,12 +3495,12 @@
         {
           "rank": 10,
           "name": "Ellisvs",
-          "points": 6875
+          "points": 6970
         },
         {
           "rank": 11,
           "name": "timmeke1",
-          "points": 6840
+          "points": 6935
         },
         {
           "rank": 12,
@@ -3534,18 +3534,18 @@
         },
         {
           "rank": 18,
+          "name": "RecentHuisBezitter",
+          "points": 6120
+        },
+        {
+          "rank": 19,
           "name": "Opahoning",
           "points": 6110
         },
         {
-          "rank": 19,
+          "rank": 20,
           "name": "Oma_honing",
           "points": 6105
-        },
-        {
-          "rank": 20,
-          "name": "RecentHuisBezitter",
-          "points": 6100
         },
         {
           "rank": 21,
