@@ -1,6 +1,6 @@
 {
   "pool": "127",
-  "updated": "2026-07-19T00:01:51+02:00",
+  "updated": "2026-07-19T08:40:10+02:00",
   "snapshots": [
     {
       "date": "2026-06-13",
@@ -4000,7 +4000,7 @@
     },
     {
       "date": "2026-07-19",
-      "captured_at": "2026-07-19T00:01:51+02:00",
+      "captured_at": "2026-07-19T08:40:10+02:00",
       "standings": [
         {
           "rank": 1,
@@ -4080,7 +4080,7 @@
         {
           "rank": 16,
           "name": "RecentHuisBezitter",
-          "points": 6320
+          "points": 6395
         },
         {
           "rank": 17,
@@ -4089,13 +4089,13 @@
         },
         {
           "rank": 18,
-          "name": "Momma",
+          "name": "Oma_honing",
           "points": 6200
         },
         {
-          "rank": 19,
-          "name": "Oma_honing",
-          "points": 6125
+          "rank": 18,
+          "name": "Momma",
+          "points": 6200
         },
         {
           "rank": 20,
